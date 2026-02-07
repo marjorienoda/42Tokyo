@@ -16,6 +16,6 @@ int main(void)
     printf("number b: %d \n", b);
     printf("div result: %d \n", *div);
     printf("mod result: %d", *mod);
-
+    return 0;
 
 }

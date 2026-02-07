@@ -16,6 +16,6 @@ int main(void)
 
     ft_ultimate_ft(ptr1);
     printf("%d", *********ptr1);
-
+    return 0;
 
 }

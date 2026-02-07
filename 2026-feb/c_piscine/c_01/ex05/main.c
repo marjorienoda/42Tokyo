@@ -7,5 +7,5 @@ int main(void)
     char *ptr = words;
 
     ft_putstr(ptr);
-
+    return 0;
 }

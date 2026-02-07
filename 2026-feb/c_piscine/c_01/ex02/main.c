@@ -12,5 +12,5 @@ int main(void)
     ft_swap(a, b);
     printf("number: %d \n", number);
     printf("number: %d", number_2);
-
+    return 0;
 }

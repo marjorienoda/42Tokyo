@@ -7,4 +7,5 @@ int main(void)
     int *nbr = &number;
     ft_ft(nbr);
     printf("%d", *nbr);
+    return 0;
 }

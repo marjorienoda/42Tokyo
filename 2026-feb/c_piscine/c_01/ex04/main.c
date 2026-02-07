@@ -14,5 +14,5 @@ int main(void)
     printf("number 2: %d \n", number_2);
     printf("div result: %d \n", *a);
     printf("mod result: %d \n", *b);
-
+    return 0;
 }
