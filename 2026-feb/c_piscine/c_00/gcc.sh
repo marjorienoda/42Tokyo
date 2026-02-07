@@ -1,0 +1,1 @@
+gcc -Wall -Wextra -Werror *.c -o main.out
