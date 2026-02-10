@@ -1,5 +1,3 @@
-#include <unistd.h>
-
 char *ft_strcat(char *dest, char *src)
 {
     char *dest_ptr;
@@ -21,6 +19,8 @@ char *ft_strcat(char *dest, char *src)
 
     return dest_ptr;
 }
+
+// #include <unistd.h>
 
 // int main(void)
 // {
