@@ -19,10 +19,10 @@ int ft_is_prime(int nb)
         return (0);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main(void)
-{
-    int result = ft_is_prime(1);
-    printf("result: %d", result);
-}
+// int main(void)
+// {
+//     int result = ft_is_prime(1);
+//     printf("result: %d", result);
+// }
