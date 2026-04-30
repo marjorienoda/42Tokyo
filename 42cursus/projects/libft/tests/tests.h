@@ -6,5 +6,5 @@
 # include <stdio.h>
 
 void	test_ft_substr(void);
-
+void	test_ft_strjoin(void);
 #endif
