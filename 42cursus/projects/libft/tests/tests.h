@@ -7,4 +7,6 @@
 
 void	test_ft_substr(void);
 void	test_ft_strjoin(void);
+void	test_ft_strtrim(void);
+
 #endif
