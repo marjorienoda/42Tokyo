@@ -6,7 +6,7 @@
 /*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 15:40:55 by mnoda-ta          #+#    #+#             */
-/*   Updated: 2026/04/28 17:25:24 by mnoda-ta         ###   ########.fr       */
+/*   Updated: 2026/04/30 14:47:39 by mnoda-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *s, char c);
 
 /*
 	====== MEMORY ======

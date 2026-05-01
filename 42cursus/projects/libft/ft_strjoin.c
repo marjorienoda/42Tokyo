@@ -6,7 +6,7 @@
 /*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 13:15:57 by mnoda-ta          #+#    #+#             */
-/*   Updated: 2026/04/30 14:42:41 by mnoda-ta         ###   ########.fr       */
+/*   Updated: 2026/04/30 14:47:34 by mnoda-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *ptr;
-	size_t s1_len;
-	size_t s2_len;
+	char	*ptr;
+	size_t	s1_len;
+	size_t	s2_len;
 
 	if (!s1 || !s2)
 		return (NULL);
