@@ -40,7 +40,6 @@ void	test_ft_strmapi(void)
 	}
 
 	printf("Resultado: %s\n", res);
-	// printf("Esperado:  PiScInE 42\n");
 
 	// IMPORTANTE: Como sua função usou malloc, o teste deve liberar a memória
 	free(res);
