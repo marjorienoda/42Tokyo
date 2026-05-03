@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 15:40:55 by mnoda-ta          #+#    #+#             */
-/*   Updated: 2026/05/03 13:38:01 by marvin           ###   ########.fr       */
+/*   Updated: 2026/05/03 13:55:59 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+void ft_putchar_fd(char c, int fd);
 /*
 	====== STRING ======
 */
