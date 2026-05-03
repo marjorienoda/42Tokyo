@@ -8,7 +8,8 @@ int	main(void)
 	// test_ft_strtrim();
 	// test_ft_split();
 	// test_ft_itoa();
-	test_ft_strmapi();
+	// test_ft_strmapi();
+	test_ft_striteri();
 	printf("--- TESTES FINALIZADOS ---\n");
 	return (0);
 }

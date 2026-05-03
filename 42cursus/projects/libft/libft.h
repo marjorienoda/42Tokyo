@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 15:40:55 by mnoda-ta          #+#    #+#             */
-/*   Updated: 2026/05/03 13:04:51 by marvin           ###   ########.fr       */
+/*   Updated: 2026/05/03 13:38:01 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
-
+void ft_striteri(char *s, void (*f)(unsigned int, char*));
 /*
 	====== MEMORY ======
 */
