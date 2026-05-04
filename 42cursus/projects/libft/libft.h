@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 15:40:55 by mnoda-ta          #+#    #+#             */
-/*   Updated: 2026/05/04 10:15:29 by marvin           ###   ########.fr       */
+/*   Updated: 2026/05/04 11:16:50 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ char	*ft_itoa(int n);
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void ft_striteri(char *s, void (*f)(unsigned int, char*));
 void ft_putendl_fd(char *s, int fd);
+void ft_putnbr_fd(int n, int fd);
+
 
 /*
 	====== MEMORY ======
