@@ -15,7 +15,8 @@ int	main(void)
 	// test_ft_putendl_fd();
 	// test_ft_putnbr_fd();
 	// test_ft_lstnew();
-	test_ft_lstadd_front();
+	// test_ft_lstadd_front();
+	test_ft_lstsize();
 	printf("--- TESTES FINALIZADOS ---\n");
 	return (0);
 }
