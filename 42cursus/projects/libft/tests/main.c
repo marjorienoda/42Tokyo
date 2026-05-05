@@ -2,7 +2,7 @@
 
 int	main(void)
 {
-	printf("--- INICIANDO TESTES ---\n");
+	printf("--- STARTING TESTS ---\n");
 	// test_ft_substr();
 	// test_ft_strjoin();
 	// test_ft_strtrim();
@@ -16,7 +16,8 @@ int	main(void)
 	// test_ft_putnbr_fd();
 	// test_ft_lstnew();
 	// test_ft_lstadd_front();
-	test_ft_lstsize();
-	printf("--- TESTES FINALIZADOS ---\n");
+	// test_ft_lstsize();
+	test_ft_lstlast();
+	printf("--- FINISHING TESTS ---\n");
 	return (0);
 }
