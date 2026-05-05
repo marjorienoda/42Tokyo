@@ -17,5 +17,6 @@ void	test_ft_putstr_fd(void);
 void	test_ft_putendl_fd(void);
 void	test_ft_putnbr_fd(void);
 void	test_ft_lstnew(void);
-void test_ft_lstadd_front(void);
+void test_ft_lstadd_front(void);;
+void test_ft_lstsize(void);
 #endif
