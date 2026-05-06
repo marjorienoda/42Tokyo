@@ -4,7 +4,7 @@
 
 void	test_ft_lstadd_front(void)
 {
-    printf("--- Testing ft_lstnew ---\n");
+    printf("--- Testing ft_lstadd_front ---\n");
 
     t_list *list = NULL;
     t_list *node1 = ft_lstnew("Marjorie");
@@ -15,7 +15,7 @@ void	test_ft_lstadd_front(void)
 
     if (list == node2 && list->next == node1)
 	{
-		printf("✅ SUCESS \n");
+		printf("✅ SUCCESS \n");
 		printf("Node 1: %s\n", (char *)list->content);
 		printf("Node 2: %s\n", (char *)list->next->content);
 	}
