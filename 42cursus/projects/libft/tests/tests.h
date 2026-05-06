@@ -21,4 +21,5 @@ void test_ft_lstadd_front(void);
 void test_ft_lstsize(void);
 void test_ft_lstlast(void);
 void	test_ft_lstadd_back(void);
+void test_ft_lstdelone(void);
 #endif
