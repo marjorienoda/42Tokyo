@@ -21,7 +21,8 @@ int	main(void)
 	// test_ft_lstadd_back();
 	// test_ft_lstdelone();
 	// test_ft_lstclear();
-	test_ft_lstiter();
+	// test_ft_lstiter();
+	test_ft_lstmap();
 	printf("--- FINISHING TESTS ---\n");
 	return (0);
 }
