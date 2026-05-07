@@ -30,7 +30,8 @@ int	main(void)
 	// test_ft_isalnum();
 	// test_ft_isascii();
 	// test_ft_isprint();
-	test_ft_strlen();
+	// test_ft_strlen();
+	test_ft_memset();
 	printf("--- FINISHING TESTS ---\n");
 	return (0);
 }
