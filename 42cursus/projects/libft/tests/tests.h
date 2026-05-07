@@ -34,5 +34,6 @@ void test_ft_isascii(void);
 void test_ft_isprint(void);
 void test_ft_strlen(void);
 void test_ft_memset(void);
+void test_ft_memcpy(void);
 
 #endif
