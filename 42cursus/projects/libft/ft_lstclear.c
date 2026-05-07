@@ -3,12 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 07:52:26 by marvin            #+#    #+#             */
-/*   Updated: 2026/05/07 07:52:26 by marvin           ###   ########.fr       */
+/*   Created: 2026/05/07 14:51:03 by mnoda-ta          #+#    #+#             */
+/*   Updated: 2026/05/07 15:35:29 by mnoda-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+ * DESCRIPTION:
+ * The function ft_lstclear deletes and frees the given node and all
+ * its successors, using the function del and free(3).
+ * Set the pointer to the list to NULL.
+ *
+ * RETURN VALUE:
+ * None
+ */
 
 #include "libft.h"
 

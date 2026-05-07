@@ -3,12 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/05 13:24:38 by marvin            #+#    #+#             */
-/*   Updated: 2026/05/05 13:24:38 by marvin           ###   ########.fr       */
+/*   Created: 2026/05/07 14:59:42 by mnoda-ta          #+#    #+#             */
+/*   Updated: 2026/05/07 15:41:13 by mnoda-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+ * DESCRIPTION:
+ * The function ft_lstlast returns the last node of the list.
+ *
+ * RETURN VALUE:
+ * The pointer to last node of the list.
+ */
 
 
 #include "libft.h"

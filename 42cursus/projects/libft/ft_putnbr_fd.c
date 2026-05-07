@@ -3,12 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/04 11:16:00 by marvin            #+#    #+#             */
-/*   Updated: 2026/05/04 11:16:00 by marvin           ###   ########.fr       */
+/*   Created: 2026/05/07 15:02:09 by mnoda-ta          #+#    #+#             */
+/*   Updated: 2026/05/07 15:02:11 by mnoda-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+ * DESCRIPTION:
+ * The function ft_putnbr_fd outputs the integer n to the
+ * specified file descriptor (fd).
+ *
+ * RETURN VALUE:
+ * None.
+ */
 
 #include "libft.h"
 

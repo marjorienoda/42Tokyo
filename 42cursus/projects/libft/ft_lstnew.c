@@ -3,12 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/05 12:04:20 by marjorie          #+#    #+#             */
-/*   Updated: 2026/05/05 12:17:56 by marvin           ###   ########.fr       */
+/*   Created: 2026/05/07 15:00:21 by mnoda-ta          #+#    #+#             */
+/*   Updated: 2026/05/07 15:44:11 by mnoda-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+ * DESCRIPTION:
+ * The function ft_lstnew allocates memory and returns a new node.
+ * The content member variable is initialized with the given
+ * parameter (content).
+ * The variable next is initialized to NULL.
+ *
+ * RETURN VALUE:
+ * The pointer to the new node.
+ */
 
 #include "libft.h"
 
