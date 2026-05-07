@@ -24,4 +24,5 @@ void	test_ft_lstadd_back(void);
 void test_ft_lstdelone(void);
 void test_ft_lstclear(void);
 void test_ft_lstiter(void);
+void test_ft_lstmap(void);
 #endif
