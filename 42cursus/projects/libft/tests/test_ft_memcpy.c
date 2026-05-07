@@ -4,14 +4,12 @@
 
 void run_test(char *d_ft, char *d_orig, const char *s, size_t n)
 {
-    // Executa ambas as funções
     ft_memcpy(d_ft, s, n);
     memcpy(d_orig, s, n);
 
     printf("Test: Copy %zu bytes from \"%s\"\n", n, s);
     printf("Expected: [%s] | Actual: [%s] ", d_orig, d_ft);
 
-    // Compara o conteúdo dos buffers após a operação
     if (memcmp(d_ft, d_orig, 15) == 0)
         printf("✅ SUCCESS\n");
     else
