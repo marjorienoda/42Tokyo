@@ -32,7 +32,9 @@ int	main(void)
 	// test_ft_isprint();
 	// test_ft_strlen();
 	// test_ft_memset();
-	test_ft_memcpy();
+	// test_ft_memcpy();
+	// test_ft_memmove();
+	test_ft_strlcpy();
 	printf("--- FINISHING TESTS ---\n");
 	return (0);
 }

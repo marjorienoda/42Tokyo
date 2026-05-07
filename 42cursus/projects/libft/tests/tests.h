@@ -35,5 +35,6 @@ void test_ft_isprint(void);
 void test_ft_strlen(void);
 void test_ft_memset(void);
 void test_ft_memcpy(void);
-
+void test_ft_memmove(void);
+void test_ft_strlcpy(void);
 #endif
