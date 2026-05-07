@@ -6,14 +6,14 @@
 /*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 10:19:25 by mnoda-ta          #+#    #+#             */
-/*   Updated: 2026/05/07 14:58:45 by mnoda-ta         ###   ########.fr       */
+/*   Updated: 2026/05/07 17:06:20 by mnoda-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
  * DESCRIPTION:
  * The function ft_atoi converts the initial portion of the string pointed
- * to by nptr to int.
+ * to by str to int.
  *
  * RETURN VALUE:
  * The converted value or 0 on error.

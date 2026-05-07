@@ -16,14 +16,15 @@
  * alphabetic character or not.
  *
  * RETURN VALUE:
- * 1 if the character c is an alphabetic charater, zero if is not.
+ * 1 if the character c is an alphabetic charater.
+ * Zero if is not.
  */
 
 #include "libft.h"
 
 int	ft_isalpha(int c)
 {
-	if ((c >= 'A' || c <= 'Z') && (c >= 'a' || c <= 'z'))
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
 	return (0);
 }

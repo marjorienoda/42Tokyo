@@ -23,6 +23,7 @@ int	main(void)
 	// test_ft_lstclear();
 	// test_ft_lstiter();
 	// test_ft_lstmap();
+	test_ft_atoi();
 	printf("--- FINISHING TESTS ---\n");
 	return (0);
 }
