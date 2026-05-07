@@ -26,5 +26,7 @@ void test_ft_lstclear(void);
 void test_ft_lstiter(void);
 void test_ft_lstmap(void);
 void test_ft_atoi(void);
+void test_ft_bzero(void);
+void test_ft_isalpha(void);
 
 #endif
