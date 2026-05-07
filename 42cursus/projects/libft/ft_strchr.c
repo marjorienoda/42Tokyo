@@ -24,13 +24,19 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != c)
+	unsigned char *src;
+	unsigned char l;
+
+	src = (unsigned char *)s;
+	l = (unsigned char) c;
+
+	while (*src != l)
 	{
-		if (*s == '\0')
+		if (*src == '\0')
 		{
 			return (NULL);
 		}
-		s++;
+		src++;
 	}
-	return ((char *)s);
+	return ((char *)src);
 }

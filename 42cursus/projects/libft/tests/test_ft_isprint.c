@@ -4,8 +4,8 @@
 
 void run_test(int c)
 {
-    int expected = isalpha(c);
-    int actual = ft_isalpha(c);
+    int expected = isprint(c);
+    int actual = ft_isprint(c);
 
     printf("Char: %c \n", c);
     printf("Expected: %d | Actual: %d \n", expected, actual);
@@ -17,22 +17,15 @@ void run_test(int c)
     printf("------------------------------\n");
 }
 
-void test_ft_isalpha(void)
+void test_ft_isprint(void)
 {
-    printf("--- Testing ft_isalpha ---\n");
-    run_test('Z');
-    run_test('a');
-    run_test('0');
-    run_test('9');
-    run_test('!');
-    run_test('@');
-
-    run_test(64);
+    printf("--- Testing ft_isprint ---\n");
+    run_test(0);
+    run_test(9);
+    run_test(31);
+    run_test(32);
     run_test(65);
-    run_test(90);
-    run_test(91);
-    run_test(96);
-    run_test(97);
-    run_test(122);
-    run_test(123);
+    run_test(126);
+    run_test(127);
+    run_test(128);
 }
