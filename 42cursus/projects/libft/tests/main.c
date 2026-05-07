@@ -19,7 +19,8 @@ int	main(void)
 	// test_ft_lstsize();
 	// test_ft_lstlast();
 	// test_ft_lstadd_back();
-	test_ft_lstdelone();
+	// test_ft_lstdelone();
+	test_ft_lstclear();
 	printf("--- FINISHING TESTS ---\n");
 	return (0);
 }
