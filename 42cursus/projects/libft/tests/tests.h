@@ -40,4 +40,5 @@ void test_ft_strlcpy(void);
 void test_ft_strlcat(void);
 void test_ft_toupper(void);
 void test_ft_tolower(void);
+void test_ft_strchr(void);
 #endif
