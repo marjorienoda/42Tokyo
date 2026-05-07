@@ -3,12 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/05 12:59:37 by marvin            #+#    #+#             */
-/*   Updated: 2026/05/05 12:59:37 by marvin           ###   ########.fr       */
+/*   Created: 2026/05/07 15:00:39 by mnoda-ta          #+#    #+#             */
+/*   Updated: 2026/05/07 15:00:43 by mnoda-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+ * DESCRIPTION:
+ * The function ft_lstsize counts the number of nodes in the list.
+ *
+ * RETURN VALUE:
+ * The lenght of the list.
+ */
 
 #include "libft.h"
 

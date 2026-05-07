@@ -3,12 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/06 13:51:12 by marvin            #+#    #+#             */
-/*   Updated: 2026/05/06 13:51:12 by marvin           ###   ########.fr       */
+/*   Created: 2026/05/07 14:58:18 by mnoda-ta          #+#    #+#             */
+/*   Updated: 2026/05/07 15:27:11 by mnoda-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+ * DESCRIPTION:
+ * The function ft_lstadd_back adds the node new at the end
+ * of the list.
+ *
+ * RETURN VALUE:
+ * None
+ */
 
 #include "libft.h"
 

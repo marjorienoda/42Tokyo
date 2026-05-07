@@ -3,12 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 09:44:02 by marvin            #+#    #+#             */
-/*   Updated: 2026/05/07 09:44:02 by marvin           ###   ########.fr       */
+/*   Created: 2026/05/07 14:51:20 by mnoda-ta          #+#    #+#             */
+/*   Updated: 2026/05/07 15:36:52 by mnoda-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+ * DESCRIPTION:
+ * The function ft_lstiter iterates through the list lst and
+ * applies the function f to the content of each node.
+ *
+ * RETURN VALUE:
+ * None
+ */
 
 #include "libft.h"
 
