@@ -25,7 +25,8 @@ int	main(void)
 	// test_ft_lstmap();
 	// test_ft_atoi();
 	// test_ft_bzero();
-	test_ft_isalpha();
+	// test_ft_isalpha();
+	test_ft_isdigit();
 	printf("--- FINISHING TESTS ---\n");
 	return (0);
 }

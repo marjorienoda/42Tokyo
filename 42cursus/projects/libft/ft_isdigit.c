@@ -15,14 +15,15 @@
  * The function ft_isdigit checks for a digit (0 through 9).
  *
  * RETURN VALUE:
- * 1 if the character c is a digit charater, zero if is not.
+ * 1 if the character c is a digit charater.
+ * Zero if is not.
  */
 
 #include "libft.h"
 
 int	ft_isdigit(int c)
 {
-	if (c <= '0' || c >= '9')
+	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
