@@ -38,4 +38,6 @@ void test_ft_memcpy(void);
 void test_ft_memmove(void);
 void test_ft_strlcpy(void);
 void test_ft_strlcat(void);
+void test_ft_toupper(void);
+void test_ft_tolower(void);
 #endif
