@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 15:01:54 by mnoda-ta          #+#    #+#             */
-/*   Updated: 2026/05/07 15:01:58 by mnoda-ta         ###   ########.fr       */
+/*   Created: 2026/05/08 14:37:12 by mnoda-ta          #+#    #+#             */
+/*   Updated: 2026/05/08 14:37:13 by mnoda-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-    int i;
-    i = 0;
+	int	i;
 
-    while(s[i] != '\0')
-    {
-        ft_putchar_fd(s[i], fd);
-        i++;
-    }
+	i = 0;
+	while (s[i] != '\0')
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
 }

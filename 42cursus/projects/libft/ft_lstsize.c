@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 15:00:39 by mnoda-ta          #+#    #+#             */
-/*   Updated: 2026/05/07 15:00:43 by mnoda-ta         ###   ########.fr       */
+/*   Created: 2026/05/08 14:33:50 by mnoda-ta          #+#    #+#             */
+/*   Updated: 2026/05/08 14:33:52 by mnoda-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-    int count;
+	int	count;
 
-    count = 0;
-    while(lst != NULL)
-    {
-        count++;
-        lst = lst->next;
-    }
-    return(count);
+	count = 0;
+	while (lst != NULL)
+	{
+		count++;
+		lst = lst->next;
+	}
+	return (count);
 }

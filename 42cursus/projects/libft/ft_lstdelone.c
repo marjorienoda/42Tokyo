@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 14:51:09 by mnoda-ta          #+#    #+#             */
-/*   Updated: 2026/05/07 15:31:57 by mnoda-ta         ###   ########.fr       */
+/*   Created: 2026/05/08 14:28:12 by mnoda-ta          #+#    #+#             */
+/*   Updated: 2026/05/08 14:28:14 by mnoda-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@
 
 #include "libft.h"
 
-void ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-    if(!lst || !del)
-        return;
-    del(lst->content);
-    free(lst);
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }

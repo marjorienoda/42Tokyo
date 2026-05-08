@@ -10,19 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ * DESCRIPTION:
+ * The function ft_striteri applies the function f to each character
+ * of the string s, passing its index as the first argument.
+ * Each character is passed by address to the function f so it can be
+ * modified if necessary.
+ *
+ * RETURN VALUE:
+ * None.
+ */
 
 #include "libft.h"
 
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-    int i;
-    if(!s || !f)
-        return ;
-    i = 0;
-    while(s[i] != '\0')
-    {
-        f(i, s + i);
-        i++;
-    }
-    return ;
+	int	i;
+
+	if (!s || !f)
+		return ;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		f(i, s + i);
+		i++;
+	}
+	return ;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 15:00:21 by mnoda-ta          #+#    #+#             */
-/*   Updated: 2026/05/07 15:44:11 by mnoda-ta         ###   ########.fr       */
+/*   Created: 2026/05/08 14:32:51 by mnoda-ta          #+#    #+#             */
+/*   Updated: 2026/05/08 14:32:54 by mnoda-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,16 @@
 
 #include "libft.h"
 
-
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-    t_list *ptr_node;
-    ptr_node = malloc(sizeof(t_list));
-    if(!ptr_node)
-    {
-        return(NULL);
-    }
-    ptr_node->content = content;
-    ptr_node->next = NULL;
-    return(ptr_node);
+	t_list	*ptr_node;
+
+	ptr_node = malloc(sizeof(t_list));
+	if (!ptr_node)
+	{
+		return (NULL);
+	}
+	ptr_node->content = content;
+	ptr_node->next = NULL;
+	return (ptr_node);
 }
