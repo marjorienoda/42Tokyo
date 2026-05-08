@@ -2,7 +2,7 @@
 #include <limits.h>
 #include <stdio.h>
 
-void	run_test(int nb, char *expected)
+static void	run_test(int nb, char *expected)
 {
 	char	*res;
 

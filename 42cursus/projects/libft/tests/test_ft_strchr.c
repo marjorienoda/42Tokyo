@@ -2,25 +2,27 @@
 #include <stdio.h>
 #include <string.h>
 
-void run_test(const char *s, int c, char *desc)
+static void	run_test(const char *s, int c, char *desc)
 {
-    char *expected = strchr(s, c);
-    char *actual = ft_strchr(s, c);
+	char	*expected;
+	char	*actual;
 
-    printf("Test: %s \n", desc);
-    if(expected == actual)
-        printf("✅ SUCCESS \n" );
-    else
-    {
-        printf("❌ FAILED\n");
-    }
-    printf("------------------------------\n");
+	expected = strchr(s, c);
+	actual = ft_strchr(s, c);
+	printf("Test: %s \n", desc);
+	if (expected == actual)
+		printf("✅ SUCCESS \n");
+	else
+	{
+		printf("❌ FAILED\n");
+	}
+	printf("------------------------------\n");
 }
 
-void test_ft_strchr(void)
+void	test_ft_strchr(void)
 {
-    printf("--- Testing ft_strchr ---\n");
-    run_test("Marjorie", 'j', "Find the character");
+	printf("--- Testing ft_strchr ---\n");
+	run_test("Marjorie", 'j', "Find the character");
 
 	run_test("banana", 'a', "First occurance");
 
@@ -35,5 +37,4 @@ void test_ft_strchr(void)
 	run_test("test", 'e' + 256, "nt overflow (cast to char)");
 
 	run_test("", 'A', "empty string");
-
 }

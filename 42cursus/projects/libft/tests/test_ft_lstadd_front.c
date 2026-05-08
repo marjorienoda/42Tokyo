@@ -2,18 +2,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 void	test_ft_lstadd_front(void)
 {
-    printf("--- Testing ft_lstadd_front ---\n");
+	printf("--- Testing ft_lstadd_front ---\n");
 
-    t_list *list = NULL;
-    t_list *node1 = ft_lstnew("Marjorie");
-    t_list *node2 = ft_lstnew("42Tokyo");
+	t_list *list = NULL;
+	t_list *node1 = ft_lstnew("Marjorie");
+	t_list *node2 = ft_lstnew("42Tokyo");
 
-    ft_lstadd_front(&list, node1);
-    ft_lstadd_front(&list, node2);
+	ft_lstadd_front(&list, node1);
+	ft_lstadd_front(&list, node2);
 
-    if (list == node2 && list->next == node1)
+	if (list == node2 && list->next == node1)
 	{
 		printf("✅ SUCCESS \n");
 		printf("Node 1: %s\n", (char *)list->content);

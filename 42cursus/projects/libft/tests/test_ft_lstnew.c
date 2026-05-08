@@ -7,8 +7,8 @@ void	test_ft_lstnew(void)
 	printf("--- Testando ft_lstnew ---\n");
 
 	// Caso 1: Testando com uma string
-	char	*str_content = "Marjorie 42";
-	t_list	*node1 = ft_lstnew(str_content);
+	char *str_content = "Marjorie 42";
+	t_list *node1 = ft_lstnew(str_content);
 
 	if (node1)
 	{
@@ -17,14 +17,15 @@ void	test_ft_lstnew(void)
 			printf("✅ SUCESSO\n");
 		else
 			printf("❌ FALHA (Conteúdo ou Next incorretos)\n");
-		free(node1); // Não esqueça de liberar a memória alocada pelo seu ft_lstnew
+		free(node1);
+		// Não esqueça de liberar a memória alocada pelo seu ft_lstnew
 	}
 	else
 		printf("❌ FALHA (Erro de alocação/Malloc)\n");
 
 	// Caso 2: Testando com um ponteiro para inteiro
-	int		num = 42;
-	t_list	*node2 = ft_lstnew(&num);
+	int num = 42;
+	t_list *node2 = ft_lstnew(&num);
 
 	if (node2)
 	{
@@ -37,7 +38,7 @@ void	test_ft_lstnew(void)
 	}
 
 	// Caso 3: Testando com conteúdo NULL
-	t_list	*node3 = ft_lstnew(NULL);
+	t_list *node3 = ft_lstnew(NULL);
 
 	if (node3)
 	{
