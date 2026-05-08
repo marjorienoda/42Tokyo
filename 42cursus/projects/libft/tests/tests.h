@@ -53,4 +53,11 @@ void	test_ft_strlcat(void);
 void	test_ft_toupper(void);
 void	test_ft_tolower(void);
 void	test_ft_strchr(void);
+void	test_ft_strrchr(void);
+void	test_ft_strncmp(void);
+void	test_ft_memchr(void);
+void	test_ft_memcmp(void);
+void	test_ft_strnstr(void);
+void	test_ft_calloc(void);
+void	test_ft_strdup(void);
 #endif

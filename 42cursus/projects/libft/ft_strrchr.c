@@ -24,14 +24,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*ptr;
-	size_t		str_len;
+	const char		*ptr;
+	size_t			str_len;
+	unsigned char	ch;
 
 	str_len = ft_strlen(s);
 	ptr = s + str_len;
+	ch = (unsigned char)c;
 	while (ptr >= s)
 	{
-		if (c == *ptr)
+		if (ch == *ptr)
 			return ((char *)ptr);
 		ptr--;
 	}

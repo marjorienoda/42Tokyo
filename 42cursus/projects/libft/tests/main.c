@@ -5,7 +5,7 @@ int	main(void)
 	printf("--- STARTING TESTS ---\n");
 	// test_ft_substr();
 	// test_ft_strjoin();
-	// test_ft_strtrim();
+	test_ft_strtrim();
 	// test_ft_split();
 	// test_ft_itoa();
 	// test_ft_strmapi();
@@ -25,11 +25,11 @@ int	main(void)
 	// test_ft_lstmap();
 	// test_ft_atoi();
 	// test_ft_bzero();
-	test_ft_isalpha();
-	test_ft_isdigit();
-	test_ft_isalnum();
-	test_ft_isascii();
-	test_ft_isprint();
+	// test_ft_isalpha();
+	// test_ft_isdigit();
+	// test_ft_isalnum();
+	// test_ft_isascii();
+	// test_ft_isprint();
 	// test_ft_strlen();
 	// test_ft_memset();
 	// test_ft_memcpy();
@@ -39,6 +39,13 @@ int	main(void)
 	// test_ft_toupper();
 	// test_ft_tolower();
 	// test_ft_strchr();
+	// test_ft_strrchr();
+	// test_ft_strncmp();
+	// test_ft_memchr();
+	// test_ft_memcmp();
+	// test_ft_strnstr();
+	// test_ft_calloc();
+	// test_ft_strdup();
 	printf("--- FINISHING TESTS ---\n");
 	return (0);
 }
