@@ -2,55 +2,44 @@
 #include <stdio.h>
 #include <string.h>
 
-static void	check_result(int test_num, char *desc, char *result, char *expected)
+static void	run_test(char const *s1, char const *set, char *expected,
+		char *test_name)
 {
-	printf("Teste %02d [%s]: ", test_num, desc);
-	// Caso ambos sejam NULL (algumas funções podem retornar NULL em erro)
-	if (result == NULL && expected == NULL)
-		printf("✅ PASSOU (NULL)\n");
-	// Caso o conteúdo seja igual ao esperado
-	else if (result != NULL && expected != NULL && strcmp(result,
-			expected) == 0)
-		printf("✅ PASSOU (\"%s\")\n", result);
-	// Caso falhe
+	char	*actual;
+	size_t	expected_len;
+
+	expected_len = ft_strlen(expected);
+	actual = ft_strtrim(s1, set);
+	printf("Test: %s  \n", test_name);
+	if (expected == NULL && actual == NULL)
+		printf("✅ SUCCESS (NULL)\n");
 	else
 	{
-		printf("❌ FALHOU!\n");
-		printf("      Recebeu: [%s]\n", result ? result : "NULL");
-		printf("      Esperado: [%s]\n", expected ? expected : "NULL");
+		if (ft_memcmp(expected, actual, expected_len) == 0)
+			printf("✅ SUCCESS: content matches \n");
+		else
+			printf("❌ FAILED\n Error NULL \n");
 	}
-	// Limpa a memória alocada pela sua função ft_
-	if (result)
-		free(result);
+	if (actual)
+		free(actual);
+	printf("---------------------------\n");
 }
 
 void	test_ft_strtrim(void)
 {
-	printf("\n--- Testando ft_strtrim ---\n");
+	printf("--- Testing ft_strtrim ---\n");
 
-	// Teste 1: Caso padrão (espaços nas bordas)
-	check_result(1, "Espaços nas bordas", ft_strtrim("   hello world   ", " "),
-		"hello world");
+	run_test("   hello world   ", " ", "hello world", "Spaces");
 
-	// Teste 2: Múltiplos caracteres no set
-	check_result(2, "Hifens e pontos", ft_strtrim("...---sos---...", ".-"),
-		"sos");
+	run_test("...---sos---...", ".-", "sos", "Specials characters");
 
-	// Teste 3: Set não encontrado (nada muda)
-	check_result(3, "Set não existente", ft_strtrim("42 Tokyo", "xyz"),
-		"42 Tokyo");
+	run_test("42 Tokyo", "xyz", "42 Tokyo", "Set doesnt exist");
 
-	// Teste 4: String composta apenas por caracteres do set
-	check_result(4, "Tudo para remover", ft_strtrim("aaaaaaa", "a"), "");
+	run_test("aaaaaaa", "a", "", "Removes everything");
 
-	// Teste 5: String vazia
-	check_result(5, "String vazia", ft_strtrim("", "abc"), "");
+	run_test("", "abc", "", "String empty");
 
-	// Teste 6: Set vazio (deve retornar uma cópia da string)
-	check_result(6, "Set vazio", ft_strtrim("marjorie", ""), "marjorie");
+	run_test("marjorie", "", "marjorie", "Set empyt");
 
-	// Teste 7: Caracteres no meio não devem sair
-	check_result(7, "Caracteres no meio", ft_strtrim("abaaba", "a"), "baab");
-
-	printf("---------------------------\n");
+	run_test("abaaba", "a", "baab", "Characters in the middle");
 }

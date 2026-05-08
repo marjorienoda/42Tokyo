@@ -8,47 +8,39 @@ static void	test_ft_substr_case(char const *s, unsigned int start, size_t len,
 	size_t	exp_len;
 
 	result = ft_substr(s, start, len);
-	// Proteção contra retorno NULL
 	if (result == NULL)
 	{
-		printf("❌ [KO] Input: \"%s\" | Esperado: \"%s\" | Recebido: NULL\n", s,
+		printf("❌ FAILED Input: \"%s\" | Expected: \"%s\" | Actual: NULL\n", s,
 			expected);
 		return ;
 	}
 	exp_len = ft_strlen(expected);
-	// Compara o resultado com o esperado
 	if (ft_strncmp(result, expected, exp_len + 1) == 0)
 	{
-		printf("✅ [OK] Input: \"%s\", Start: %u, Len: %zu -> \"%s\"\n", s,
+		printf("✅ SUCCESS Input: \"%s\", Start: %u, Len: %zu -> \"%s\"\n", s,
 			start, len, result);
 	}
 	else
 	{
-		printf("❌ [KO] Input: \"%s\" | Esperado: \"%s\" | Recebido: \"%s\"\n",
+		printf("❌ FAILED Input: \"%s\" | Expected: \"%s\" | Actual: \"%s\"\n",
 			s, expected, result);
 	}
-	// Libera a memória alocada
 	free(result);
+	printf("--------------------------\n");
 }
 
 void	test_ft_substr(void)
 {
-	printf("\n--- TESTANDO FT_SUBSTR ---\n");
+	printf("--- Testing ft_substr ---\n");
 
-	// Caso básico
 	test_ft_substr_case("Hello World", 6, 5, "World");
 
-	// Start no final da string
 	test_ft_substr_case("42 Tokyo", 3, 5, "Tokyo");
 
-	// Start maior que o tamanho da string (Deve retornar string vazia)
 	test_ft_substr_case("Marjorie", 15, 1, "");
 
-	// Len maior que o restante da string
-	test_ft_substr_case("Estudar C", 0, 50, "Estudar C");
+	test_ft_substr_case("Project libft 42 Tokyo", 0, 50,
+		"Project libft 42 Tokyo");
 
-	// Start no meio, mas len é zero
-	test_ft_substr_case("Teste", 2, 0, "");
-
-	printf("--------------------------\n");
+	test_ft_substr_case("Test", 2, 0, "");
 }

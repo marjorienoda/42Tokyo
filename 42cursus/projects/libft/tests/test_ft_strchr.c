@@ -22,11 +22,11 @@ static void	run_test(const char *s, int c, char *desc)
 void	test_ft_strchr(void)
 {
 	printf("--- Testing ft_strchr ---\n");
-	run_test("Marjorie", 'j', "Find the character");
+	run_test("Marjorie", 'j', "Found the character");
 
-	run_test("banana", 'a', "First occurance");
+	run_test("banana", 'a', "The first occurance");
 
-	run_test("Marjorie", 'z', "Dont exist");
+	run_test("Marjorie", 'z', "It doesn't exist");
 
 	run_test("42Tokyo", '\0', "null terminator ('\\0')");
 

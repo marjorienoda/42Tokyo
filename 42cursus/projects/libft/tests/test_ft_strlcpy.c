@@ -11,7 +11,6 @@ static void	run_test(char *d_ft, char *d_orig, const char *s, size_t sz,
 	size_t	ret_orig;
 
 	printf("Test: %s (size=%zu)\n", desc, sz);
-	// Armazena os retornos (comprimento da src)
 	ret_ft = ft_strlcpy(d_ft, s, sz);
 	ret_orig = strlcpy(d_orig, s, sz);
 	printf("Src: \"%s\" | Size: %zu\n", s, sz);
