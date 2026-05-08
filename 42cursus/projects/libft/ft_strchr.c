@@ -24,12 +24,11 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned char *src;
-	unsigned char l;
+	unsigned char	*src;
+	unsigned char	l;
 
 	src = (unsigned char *)s;
-	l = (unsigned char) c;
-
+	l = (unsigned char)c;
 	while (*src != l)
 	{
 		if (*src == '\0')

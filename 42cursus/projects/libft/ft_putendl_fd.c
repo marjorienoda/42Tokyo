@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 15:01:37 by mnoda-ta          #+#    #+#             */
-/*   Updated: 2026/05/07 15:01:40 by mnoda-ta         ###   ########.fr       */
+/*   Created: 2026/05/08 14:35:30 by mnoda-ta          #+#    #+#             */
+/*   Updated: 2026/05/08 14:35:32 by mnoda-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@
 
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-    int i;
-    i = 0;
+	int	i;
 
-    while(s[i] != '\0')
-    {
-        ft_putchar_fd(s[i], fd);
-        i++;
-    }
-    ft_putchar_fd('\n', 1);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
+	ft_putchar_fd('\n', 1);
 }
