@@ -1,7 +1,7 @@
 #include "tests.h"
 #include <stdio.h>
 
-void	test_ft_substr_case(char const *s, unsigned int start, size_t len,
+static void	test_ft_substr_case(char const *s, unsigned int start, size_t len,
 		char *expected)
 {
 	char	*result;

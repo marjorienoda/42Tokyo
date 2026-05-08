@@ -1,14 +1,12 @@
+#include "tests.h"
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-#include "tests.h"
 
-// Protótipo da sua função (para o compilador não reclamar)
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 // Função auxiliar que passaremos como parâmetro
 // Ela transforma pares em MAIÚSCULAS e ímpares em minúsculas
-char	my_test_transform(unsigned int i, char c)
+static char	my_test_transform(unsigned int i, char c)
 {
 	if (i % 2 == 0)
 	{
@@ -25,8 +23,8 @@ char	my_test_transform(unsigned int i, char c)
 
 void	test_ft_strmapi(void)
 {
-	char	*str = "";
-	char	*res;
+	char *str = "";
+	char *res;
 
 	printf("--- Testando ft_strmapi ---\n");
 	printf("Original:  %s\n", str);

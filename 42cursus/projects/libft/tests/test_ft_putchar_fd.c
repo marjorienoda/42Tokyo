@@ -1,8 +1,8 @@
-#include <stdio.h>
 #include "tests.h"
+#include <stdio.h>
 
 
-void test_ft_putchar_fd(void)
+static void	test_ft_putchar_fd(void)
 {
 	printf("--- Testando ft_putchar_fd ---\n");
 

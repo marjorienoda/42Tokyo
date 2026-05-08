@@ -2,12 +2,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void ft_delone(void *content)
+
+static void	ft_delone(void *content)
 {
-    free(content);
+	free(content);
 }
 
-void	print_list(t_list *lst)
+static void	print_list(t_list *lst)
 {
 	int i = 0;
 
@@ -19,22 +20,21 @@ void	print_list(t_list *lst)
 	}
 }
 
-void test_ft_lstclear(void)
+void	test_ft_lstclear(void)
 {
-    printf("--- Testing ft_lstclear ---\n");
-    t_list *list = ft_lstnew(ft_strdup("First Node"));
-    ft_lstadd_back(&list, ft_lstnew(ft_strdup("Second Node")));
-    ft_lstadd_back(&list, ft_lstnew(ft_strdup("Third Node")));
+	printf("--- Testing ft_lstclear ---\n");
+	t_list *list = ft_lstnew(ft_strdup("First Node"));
+	ft_lstadd_back(&list, ft_lstnew(ft_strdup("Second Node")));
+	ft_lstadd_back(&list, ft_lstnew(ft_strdup("Third Node")));
 
-    printf("--- Before the clear ---\n");
-    print_list(list);
+	printf("--- Before the clear ---\n");
+	print_list(list);
 
+	ft_lstclear(&(list->next), ft_delone);
 
-    ft_lstclear(&(list->next), ft_delone);
-
-    printf("--- After the clear ---\n");
-    print_list(list);
-    if(list->next == NULL)
-        printf("List null \n");
-    ft_lstclear(&list, ft_delone);
+	printf("--- After the clear ---\n");
+	print_list(list);
+	if (list->next == NULL)
+		printf("List null \n");
+	ft_lstclear(&list, ft_delone);
 }
