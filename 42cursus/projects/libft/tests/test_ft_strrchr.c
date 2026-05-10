@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-static void	run_test(const char *big, const char *little, size_t len char *desc)
+static void	run_test(const char *s, int c, char *desc)
 {
 	char	*expected;
 	char	*actual;
@@ -26,11 +26,11 @@ static void	run_test(const char *big, const char *little, size_t len char *desc)
 void	test_ft_strrchr(void)
 {
 	printf("--- Testing ft_strrchr ---\n");
-	run_test("Marjorie", 'j', "Found the character");
+	run_test("Marjorie", 'j', "teste");
 
 	run_test("banana", 'a', "The last occurance");
 
-	run_test("Marjorie", 'z', "It doesn't exist");
+	run_test("Marjorie", 'z', "no");
 
 	run_test("42Tokyo", '\0', "null terminator ('\\0')");
 
@@ -38,7 +38,7 @@ void	test_ft_strrchr(void)
 
 	run_test("banana", 'n', "In the middle of the string");
 
-	run_test("test", 't' + 256, "nt overflow (cast to char)");
+	run_test("test", 't' + 256, "int overflow (cast to char)");
 
 	run_test("", 'A', "empty string");
 }

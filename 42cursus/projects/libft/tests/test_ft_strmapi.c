@@ -4,9 +4,7 @@
 #include <stdlib.h>
 
 
-// Função auxiliar que passaremos como parâmetro
-// Ela transforma pares em MAIÚSCULAS e ímpares em minúsculas
-static char	my_test_transform(unsigned int i, char c)
+static char	case_transformation(unsigned int i, char c)
 {
 	if (i % 2 == 0)
 	{
@@ -21,25 +19,54 @@ static char	my_test_transform(unsigned int i, char c)
 	return (c);
 }
 
+static void	run_test(char const *s, char (*f)(unsigned int, char),
+		char *expected, char *test_name)
+{
+	char *actual;
+	int success;
+	int len;
+
+	printf("Test: %s\n", test_name);
+	actual = ft_strmapi(s, f);
+	success = 1;
+	if (!actual || !expected)
+	{
+		if (actual != expected)
+			success = 0;
+	}
+	else
+	{
+		len = ft_strlen(expected);
+		if (ft_strncmp(actual, expected, len) != 0)
+			success = 0;
+	}
+	if (success)
+	{
+		printf("✅ SUCCESS \n");
+		printf("Input: %s \n", s);
+		printf("Actual: %s \n", actual);
+	}
+	else
+	{
+		printf("❌ FAILED \n");
+		printf("Expected: %s \n", expected);
+		printf("Actual: %s \n", actual);
+	}
+	free(actual);
+	printf("---------------------------\n");
+}
+
 void	test_ft_strmapi(void)
 {
-	char *str = "";
-	char *res;
+	printf("--- Testing ft_strmapi ---\n");
 
-	printf("--- Testando ft_strmapi ---\n");
-	printf("Original:  %s\n", str);
+	run_test("Marjorie!", case_transformation, "MaRjOrIe!", "simple case");
 
-	res = ft_strmapi(str, my_test_transform);
+	run_test("abcde", case_transformation, "AbCdE", "All lowercase");
 
-	if (res == NULL)
-	{
-		printf("Erro: A alocação falhou ou a função retornou NULL.\n");
-		return ;
-	}
+	run_test("", case_transformation, "", "Empty string");
 
-	printf("Resultado: %s\n", res);
+	run_test("121992389283", case_transformation, "", "Numbers");
 
-	// IMPORTANTE: Como sua função usou malloc, o teste deve liberar a memória
-	free(res);
-	printf("---------------------------\n\n");
+	run_test(NULL, case_transformation, NULL, "Input NULL");
 }

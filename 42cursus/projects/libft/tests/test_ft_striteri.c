@@ -3,35 +3,81 @@
 #include <stdio.h>
 
 
-// Função auxiliar para striteri
-// Ela usa o ponteiro (char *) para modificar o caractere no local
-static void	my_test_iter_transform(unsigned int i, char *c)
+static void	case_transformation(unsigned int i, char *c)
 {
 	if (i % 2 == 0)
 	{
 		if (*c >= 'a' && *c <= 'z')
 			*c = *c - 32;
-		// Transforma em maiúscula acessando o valor no endereço
 	}
 	else
 	{
 		if (*c >= 'A' && *c <= 'Z')
-			*c = *c + 32; // Transforma em minúscula
+			*c = *c + 32;
 	}
+}
+
+static void	run_test(char const *s, void (*f)(unsigned int, char *),
+		char *expected, char *test_name)
+{
+	char *actual;
+	int success;
+	int len;
+
+	printf("Test: %s\n", test_name);
+	success = 1;
+	if (s == NULL)
+	{
+		ft_striteri(NULL, f);
+		actual = NULL;
+	}
+	else
+	{
+		actual = ft_strdup(s);
+		ft_striteri(actual, f);
+	}
+
+	if (!actual || !expected)
+	{
+		if (actual != expected)
+			success = 0;
+	}
+	else
+	{
+		len = ft_strlen(expected);
+		if (ft_strncmp(actual, expected, len) != 0)
+			success = 0;
+	}
+
+	if (success)
+	{
+		printf("✅ SUCCESS \n");
+		printf("Expected: %s\n", expected);
+		printf("Actual: %s\n", actual);
+	}
+	else
+	{
+		printf("❌ FAILED \n");
+		printf("Expected: %s\n", expected);
+		printf("Actual: %s\n", actual);
+	}
+
+	if (actual)
+		free(actual);
+	printf("---------------------------\n");
 }
 
 void	test_ft_striteri(void)
 {
-	// Usamos um array char[] para que a memória seja editável
-	char str[] = "piscine 42";
+	printf("--- Testing ft_striteri ---\n");
 
-	printf("--- Testando ft_striteri ---\n");
-	printf("Original:  %s\n", str);
+	run_test("Marjorie!", case_transformation, "MaRjOrIe!", "Simple case");
 
-	// A função modifica a variável 'str' diretamente
-	ft_striteri(str, my_test_iter_transform);
+	run_test("abcde", case_transformation, "AbCdE", "All lowercase");
 
-	printf("Resultado: %s\n", str);
-	printf("Esperado:  PiScInE 42\n");
-	printf("---------------------------\n\n");
+	run_test("", case_transformation, "", "Empty string");
+
+	run_test("12345", case_transformation, "12345", "Numbers");
+
+	run_test(NULL, case_transformation, NULL, "Input NULL");
 }

@@ -8,7 +8,7 @@ static void	print_and_free(char **res)
 
 	if (!res)
 	{
-		printf("Result: NULL\n");
+		printf("Actual: NULL\n");
 		return ;
 	}
 	i = 0;
@@ -23,33 +23,62 @@ static void	print_and_free(char **res)
 	free(res);
 }
 
+static void	run_test(char const *s, char c, char **expected, char *test_name)
+{
+	char	**actual;
+	int		i;
+	int		success;
+	size_t	len;
+
+	actual = ft_split(s, c);
+	printf("Test: %s \n", test_name);
+	i = 0;
+	success = 1;
+	if (!actual || !expected)
+	{
+		if (actual != expected)
+			success = 0;
+	}
+	else
+	{
+		while (expected[i] && actual[i])
+		{
+			len = ft_strlen(expected[i]) + 1;
+			if (ft_strncmp(expected[i], actual[i], len) != 0)
+			{
+				success = 0;
+				break ;
+			}
+			i++;
+		}
+		if (expected[i] != actual[i])
+			success = 0;
+	}
+	if (success)
+		printf("✅ SUCCESS \n");
+	else
+		printf("❌ FAILED\n");
+	if (actual)
+		print_and_free(actual);
+	printf("------------------------------\n");
+}
+
 void	test_ft_split(void)
 {
-	char **res;
-
 	printf("--- Testing ft_split ---\n");
 
-	printf("Test 1: '  Good  morning  !  ', sep: ' '\n");
-	res = ft_split("  Good  morning  !  ", ' ');
-	print_and_free(res);
-	printf("\n");
+	char *exp1[] = {"Hello", "World", NULL};
+	run_test("Hello World", ' ', exp1, "simple case");
 
-	printf("Test 2: '42Tokyo', sep: '-'\n");
-	res = ft_split("42Tokyo", '-');
-	print_and_free(res);
-	printf("\n");
+	char *exp2[] = {"Hello", "world", "!", NULL};
+	run_test("Hello,,,world,,!", ',', exp2, "Multiple delimiters");
 
-	printf("Test 3: '-------', sep: '-'\n");
-	res = ft_split("-------", '-');
-	print_and_free(res);
-	printf("\n");
+	char *exp3[] = {"Hello", "World", NULL};
+	run_test("---Hello-World---", '-', exp3, "Start and end delimiters");
 
-	printf("Test 4: '', sep: ' '\n");
-	res = ft_split("", ' ');
-	print_and_free(res);
-	printf("\n");
+	char *exp4[] = {NULL};
+	run_test("", 'z', exp4, "Empty string");
 
-	printf("Test 5: 'banana', sep: '\\0'\n");
-	res = ft_split("banana", '\0');
-	print_and_free(res);
+	char *exp5[] = {NULL};
+	run_test(",,,,,,,,,,", ',', exp5, "Only delimiters");
 }
