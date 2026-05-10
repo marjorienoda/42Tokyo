@@ -24,5 +24,8 @@ void	test_ft_putnbr_fd(void)
 	ft_putnbr_fd(999, 2);
 	printf("\n");
 
+	ft_putnbr_fd(-2147483648, 4);
+	printf("\n");
+
 	printf("-----------------------------\n");
 }

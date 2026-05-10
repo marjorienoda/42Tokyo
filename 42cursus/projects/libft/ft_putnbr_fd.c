@@ -34,7 +34,7 @@ void	ft_putnbr_fd(int n, int fd)
 	else
 		nb = (unsigned int)n;
 	div = 1;
-	while (nb / div > 10)
+	while (nb / div >= 10)
 		div = div * 10;
 	while (div > 0)
 	{

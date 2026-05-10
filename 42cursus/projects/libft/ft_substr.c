@@ -12,9 +12,9 @@
 
 /*
  * DESCRIPTION:
- * Allocates memory (using malloc(3)) and returns a substring
- * from the string ’s’. The substring starts at index ’start’ and has a
- * maximum length of ’len’.
+ * The function ft_substr allocates memory (using malloc(3))
+ * and returns a substring from the string ’s’.
+ * The substring starts at index ’start’ and has a maximum length of ’len’.
  *
  * RETURN VALUE:
  * The pointer of the new string.
@@ -35,7 +35,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (len > str_len - start)
 		len = str_len - start;
-	substr = malloc(sizeof(char) * (str_len + 1));
+	substr = malloc(sizeof(char) * (len + 1));
 	if (!substr)
 		return (NULL);
 	ft_memcpy(substr, s + start, len);
