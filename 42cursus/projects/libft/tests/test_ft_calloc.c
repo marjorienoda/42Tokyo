@@ -45,4 +45,5 @@ void	test_ft_calloc(void)
 
 	run_test_calloc(0, sizeof(char), "Count is zero");
 	run_test_calloc(10, 0, "Size is zero");
+	run_test_calloc(0, 10, "Size is zero");
 }

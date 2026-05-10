@@ -43,4 +43,6 @@ void	test_ft_substr(void)
 		"Project libft 42 Tokyo");
 
 	test_ft_substr_case("Test", 2, 0, "");
+
+	test_ft_substr_case("hola", 0, 1, "h");
 }

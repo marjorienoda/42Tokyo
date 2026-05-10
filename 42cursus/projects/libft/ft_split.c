@@ -48,10 +48,10 @@ static int	count_words(char const *s, char c)
 
 static char	**ft_free_all(char **tab, int j)
 {
-	while (j >= 0)
+	while (j > 0)
 	{
-		free(tab[j]);
 		j--;
+		free(tab[j]);
 	}
 	free(tab);
 	return (NULL);
@@ -74,7 +74,7 @@ static char	**ft_str_cpy(char **ptr, char const *s, char c)
 				i++;
 			ptr[j] = ft_substr(s, start, i - start);
 			if (!ptr[j])
-				return (ft_free_all(ptr, j - 1));
+				return (ft_free_all(ptr, j));
 			j++;
 		}
 		else
@@ -89,10 +89,11 @@ char	**ft_split(char const *s, char c)
 	char	**ptr;
 	int		words;
 
+	if (!s)
+		return (NULL);
 	words = count_words(s, c);
 	ptr = malloc(sizeof(char *) * (words + 1));
 	if (!ptr)
 		return (NULL);
-	ft_str_cpy(ptr, s, c);
-	return (ptr);
+	return (ft_str_cpy(ptr, s, c));
 }

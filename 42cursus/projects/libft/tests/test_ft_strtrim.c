@@ -28,18 +28,13 @@ static void	run_test(char const *s1, char const *set, char *expected,
 void	test_ft_strtrim(void)
 {
 	printf("--- Testing ft_strtrim ---\n");
-
 	run_test("   hello world   ", " ", "hello world", "Spaces");
-
 	run_test("...---sos---...", ".-", "sos", "Specials characters");
-
 	run_test("42 Tokyo", "xyz", "42 Tokyo", "Set doesnt exist");
-
 	run_test("aaaaaaa", "a", "", "Removes everything");
-
 	run_test("", "abc", "", "String empty");
-
 	run_test("marjorie", "", "marjorie", "Set empyt");
-
 	run_test("abaaba", "a", "baab", "Characters in the middle");
+	run_test("xxxz  test with x and z and x .  zx  xx z", "z x", "	",
+			"Characters in the middle");
 }
