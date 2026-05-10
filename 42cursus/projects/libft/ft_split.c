@@ -39,7 +39,7 @@ static int	count_words(char const *s, char c)
 	{
 		if (i == 0 && c != s[i])
 			count++;
-		if (i > 0 && c != s[i] && c != s[i - 1])
+		if (i > 0 && c != s[i] && c == s[i - 1])
 			count++;
 		i++;
 	}
@@ -67,18 +67,18 @@ static char	**ft_str_cpy(char **ptr, char const *s, char c)
 	j = 0;
 	while (s[i] != '\0')
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i] != '\0')
+		if (s[i] != c)
 		{
 			start = i;
 			while (s[i] != c && s[i] != '\0')
 				i++;
 			ptr[j] = ft_substr(s, start, i - start);
 			if (!ptr[j])
-				return (ft_free_all(ptr, j));
+				return (ft_free_all(ptr, j - 1));
 			j++;
 		}
+		else
+			i++;
 	}
 	ptr[j] = NULL;
 	return (ptr);
@@ -90,7 +90,7 @@ char	**ft_split(char const *s, char c)
 	int		words;
 
 	words = count_words(s, c);
-	ptr = malloc(sizeof(char *) * words + 1);
+	ptr = malloc(sizeof(char *) * (words + 1));
 	if (!ptr)
 		return (NULL);
 	ft_str_cpy(ptr, s, c);

@@ -9,10 +9,12 @@ static void	run_test(int nb, char *expected)
 	res = ft_itoa(nb);
 	printf("[Test]: n = %d | Expected: %s | Result: %s", nb, expected, res);
 	printf("\n");
+	free(res);
 }
 
 void	test_ft_itoa(void)
 {
+	printf("--- Testing ft_itoa ---\n");
 	run_test(42, "42");
 	run_test(0, "0");
 	run_test(-5, "-5");

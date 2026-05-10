@@ -1,6 +1,4 @@
-# Project libft
-
-This project has been created as part of the 42 curriculum by mnoda-ta.
+*This project has been created as part of the 42 curriculum by mnoda-ta.*
 
 ## Description
 This project consists of a custom C library (*libft.a*) that reimplements a set of standard C functions and adds useful functions for future assignments.
@@ -43,3 +41,15 @@ cc main.c libft.a -o my_program
 - [Makefile Automatic Variables](https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html)
 - [CS50 Linked List](https://cs50.harvard.edu/x/weeks/5/)
 - [Linked List in C](https://www.geeksforgeeks.org/c/linked-list-in-c/)
+
+## Functions
+
+The project includes these following functions:
+
+| Rule          | Description                                             |
+| -----------   | -----------                                             |
+| `isalpha`        | The function ft_isalpha checks if the parameter is an
+ * alphabetic character or not.            |
+| `make clean`  | Removes all the object files (.o)                       |
+| `make fclean` | Removes all the object files and the compiled `libtf.a` |
+| `make re`     | Perfoms a full recompilation (`fclean` + `make`).       |
