@@ -24,6 +24,10 @@ static int	print_format(va_list list, char s)
 		counter += ft_putstr(va_arg(list, char *));
 	if (s == 'd' || s == 'i')
 		counter += ft_putnbr(va_arg(list, int));
+	if (s == 'x')
+		counter += ft_putnbr_base(va_arg(list, int), "0123456789abcdef");
+	if (s == 'X')
+		counter += ft_putnbr_base(va_arg(list, int), "0123456789ABCDEF");
 	return (counter);
 }
 
@@ -55,8 +59,8 @@ int	ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	int result = ft_printf("Ola %c, %s, %i \n", 'c', "Marjorie!@", -21474836);
-	int expected = printf("Ola %c, %s, %i \n", 'c', "Marjorie!@", -21474836);
+	int result = ft_printf("Ola %c, %s, %X \n", 'c', "Marjorie!@", -214748364);
+	int expected = printf("Ola %c, %s, %X \n", 'c', "Marjorie!@", -214748364);
 
 	printf("%d \n", result);
 	printf("%d \n", expected);
