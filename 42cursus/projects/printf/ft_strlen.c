@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/13 10:21:02 by mnoda-ta          #+#    #+#             */
-/*   Updated: 2026/05/13 10:21:05 by mnoda-ta         ###   ########.fr       */
+/*   Created: 2026/05/14 18:00:21 by mnoda-ta          #+#    #+#             */
+/*   Updated: 2026/05/14 18:00:23 by mnoda-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
+int	ft_strlen(char *str)
+{
+	int	i;
 
-int	ft_printf(const char *str, ...);
-
-/*
-	====== FORMATTING ======
-*/
-int	ft_putchar(char c);
-int	ft_putstr(char *s);
-int	ft_putnbr(int nb);
-int	ft_putnbr_base(int nb, char *base);
-
-/*
-	====== AUXILIARS ======
-*/
-int	ft_strlen(char *s);
-#endif
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}

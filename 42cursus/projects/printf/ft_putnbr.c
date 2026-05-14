@@ -19,13 +19,15 @@ int	ft_putnbr(int nb)
 	int counter;
 
 	counter = 0;
-	if (nb < 0)
+	n = (unsigned int)nb;
+	if (n < 0)
 	{
 		counter += ft_putchar('-');
-		n = (unsigned int)(nb * -1);
+		n *= -1;
+		// n = (unsigned int)(nb * -1);
 	}
-	else
-		n = (unsigned int)nb;
+	// else
+	// 	n = (unsigned int)nb;
 	div = 1;
 	while (n / div >= 10)
 		div *= 10;
