@@ -19,6 +19,8 @@ int	ft_putstr(char *s)
 
 	i = 0;
 	counter = 0;
+	if (!s)
+		s = "(null)";
 	while (s[i])
 	{
 		counter += ft_putchar(s[i]);

@@ -12,24 +12,15 @@
 
 #include "ft_printf.h"
 
-int	ft_putnbr_base(int nb, char *base)
+int	ft_putnbr_base(unsigned int nb, char *base)
 {
 	unsigned int base_size;
-	unsigned int n;
 	int counter;
 
 	base_size = ft_strlen(base);
-	n = nb;
 	counter = 0;
-	if (n < 0)
-	{
-		counter += ft_putchar('-');
-		n = -n;
-	}
-	if (n >= base_size)
-	{
-		counter += ft_putnbr_base(n / base_size, base);
-	}
-	counter += ft_putchar(base[n % base_size]);
+	if (nb >= base_size)
+		counter += ft_putnbr_base(nb / base_size, base);
+	counter += ft_putchar(base[nb % base_size]);
 	return (counter);
 }
