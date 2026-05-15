@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/14 16:36:23 by mnoda-ta          #+#    #+#             */
-/*   Updated: 2026/05/14 16:36:25 by mnoda-ta         ###   ########.fr       */
+/*   Created: 2026/05/15 18:01:12 by mnoda-ta          #+#    #+#             */
+/*   Updated: 2026/05/15 18:03:45 by mnoda-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr(int nb)
+int	ft_putptr(unsigned long long ptr)
 {
-	unsigned int n;
-	int counter;
+	int	counter;
 
 	counter = 0;
-	if (nb < 0)
-	{
-		counter += ft_putchar('-');
-		n = (unsigned int)(nb * -1);
-	}
-	else
-		n = (unsigned int)nb;
-	counter += ft_putuint(n);
+	if (ptr == 0)
+		counter += ft_putstr("(nil)");
 	return (counter);
 }
