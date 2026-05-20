@@ -25,7 +25,7 @@ int	ft_putstr(char *s);
 int	ft_putnbr(int nb);
 int	ft_putnbr_base(unsigned int nb, char *base);
 int	ft_putuint(unsigned int nb);
-int	ft_putptr(unsigned long long);
+int	ft_putptr(unsigned long long ptr, char *base);
 
 /*
 	====== AUXILIARS ======

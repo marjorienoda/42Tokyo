@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_putuint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/14 18:01:44 by mnoda-ta          #+#    #+#             */
-/*   Updated: 2026/05/14 18:01:46 by mnoda-ta         ###   ########.fr       */
+/*   Created: 2026/05/15 17:00:28 by mnoda-ta          #+#    #+#             */
+/*   Updated: 2026/05/15 17:00:44 by mnoda-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int	ft_putnbr_base(unsigned int nb, char *base)
+int	ft_putuint(unsigned int nb)
 {
-	unsigned int base_size;
-	int counter;
+	int	counter;
 
-	base_size = ft_strlen(base);
 	counter = 0;
-	if (nb >= base_size)
-		counter += ft_putnbr_base(nb / base_size, base);
-	counter += ft_putchar(base[nb % base_size]);
+	if (nb >= 10)
+		counter += ft_putuint(nb / 10);
+	counter += ft_putchar((nb % 10) + '0');
 	return (counter);
 }

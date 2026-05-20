@@ -12,9 +12,14 @@
 
 NAME = libftprintf.a
 
-SRCS = ft_printf.c ft_putchar.c ft_putstr.c ft_putnbr.c \
-		ft_putnbr_base.c ft_strlen.c ft_putuint.c ft_putptr.c
+SRC_MAIN = ft_printf.c
 
+SRC_UTILS = utils/ft_putchar.c	utils/ft_putstr.c \
+			utils/ft_putnbr.c utils/ft_putnbr_base.c \
+			utils/ft_strlen.c utils/ft_putuint.c \
+			utils/ft_putptr.c
+
+SRCS = ${SRC_MAIN} ${SRC_UTILS}
 OBJS = ${SRCS:.c=.o}
 
 CC = cc
@@ -27,7 +32,7 @@ INCLUDE = -I .
 all: $(NAME)
 
 $(NAME) : $(OBJS)
-			ar rcs ${NAME} ${OBJS}
+		ar rcs ${NAME} ${OBJS}
 clean:
 	rm -f ${OBJS}
 
