@@ -3,20 +3,6 @@
 #include <fcntl.h>
 
 
-void    print_newline_helper(char *buffer)
-{
-
-    while (*buffer &&  *buffer != '\0')
-    {
-        if (*buffer == '\n') 
-        {
-            *buffer= '\\';
-        }
-        printf("%c \n",*buffer);
-        buffer++;
-    }
-}
-
 char *get_next_line(int fd)
 {
     static char *backup;
