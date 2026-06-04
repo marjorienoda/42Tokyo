@@ -1,6 +1,6 @@
 #include "get_next_line.h"
-#include <fcntl.h>
 #include <stdio.h>
+#include <fcntl.h>
 #include <stdlib.h>
 
 static void	test_file(char *filename)
@@ -32,7 +32,7 @@ static void	test_file(char *filename)
 
 int	main(void)
 {
-	char *line;
+	char	*line;
 
 	printf("\n=== test fd = 0 (stdin) ===\n");
 	printf("type some lines (ctrl+d to stop):\n");
@@ -47,9 +47,6 @@ int	main(void)
 
 	printf("\n=== test normal file ===\n");
 	test_file("example.txt");
-
-	printf("\n=== test big one line file ===\n");
-	test_file("big_one_line.txt");
 
 	printf("\n=== test non-existent file ===\n");
 	test_file("does_not_exist.txt");

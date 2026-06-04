@@ -1,85 +1,99 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/04 10:30:23 by mnoda-ta          #+#    #+#             */
+/*   Updated: 2026/06/04 10:30:25 by mnoda-ta         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
-size_t				ft_strlen(const char *s)
+void	*ft_free(void *ptr1, void *ptr2)
 {
-    size_t i;
-    i = 0;
-    while(s[i] != '\0')
-        i++;
-    return(i);
+	free(ptr1);
+	free(ptr2);
+	return (NULL);
 }
 
-char				*ft_strchr(const char *s, int c)
+size_t	ft_strlen(const char *s)
 {
-    unsigned char *str;
-    unsigned char ch;
+	size_t	i;
 
-    str = (unsigned char *)s;
-    ch = (unsigned char)c;
-	if(!s)
-		return(NULL);
-    while(*str != ch)
-    {
-        if(*str == '\0')
-            return(NULL);
-        str++;
-    }
-    return((char *)str);
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }
 
-void				*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-    unsigned char *dest_s;
-    const unsigned char *src_s;
-    size_t i;
+	unsigned char	*str;
+	unsigned char	ch;
 
-    dest_s = (unsigned char*)dest;
-    src_s = (const unsigned char *)src;
-    i = 0;
-    while(i < n)
-    {
-        dest_s[i] = src_s[i];
-        i++;
-    }
-    return(dest);
+	str = (unsigned char *)s;
+	ch = (unsigned char)c;
+	if (!s)
+		return (NULL);
+	while (*str != ch)
+	{
+		if (*str == '\0')
+			return (NULL);
+		str++;
+	}
+	return ((char *)str);
 }
 
-char *ft_strjoin_len(char *str1, size_t str1_len, char *str2, size_t str2_len)
+char	*ft_strjoin_len(char *str1, size_t str1_len, char *str2,
+		size_t str2_len)
 {
-    char    *ptr;
+	char	*ptr;
+	size_t	i;
 
-    ptr = malloc(str1_len + str2_len + 1);
-    if(!ptr)
-    {
-        free(str1);
-        return(NULL);
-    }
-    ft_memcpy(ptr, str1, str1_len);
-    ft_memcpy(ptr + str1_len, str2, str2_len + 1);
-    free(str1);
-    return(ptr);
+	ptr = malloc(str1_len + str2_len + 1);
+	if (!ptr)
+	{
+		free(str1);
+		return (NULL);
+	}
+	i = 0;
+	while (i < str1_len)
+	{
+		ptr[i] = str1[i];
+		i++;
+	}
+	while (i < str1_len + str2_len)
+	{
+		ptr[i] = str2[i - str1_len];
+		i++;
+	}
+	ptr[i] = '\0';
+	free(str1);
+	return (ptr);
 }
 
-
-void				*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void *ptr;
-	unsigned char *p;
-	size_t total_size;
-	size_t i;
+	void			*ptr;
+	unsigned char	*p;
+	size_t			total_size;
+	size_t			i;
 
-	if(nmemb != 0 && size > __SIZE_MAX__ / nmemb)
-		return(NULL);
+	if (nmemb != 0 && size > __SIZE_MAX__ / nmemb)
+		return (NULL);
 	total_size = nmemb * size;
 	ptr = malloc(sizeof(char) * total_size);
-	if(!ptr)
-		return(NULL);
+	if (!ptr)
+		return (NULL);
 	p = ptr;
 	i = 0;
-	while(i < total_size)
+	while (i < total_size)
 	{
 		p[i] = 0;
 		i++;
 	}
-	return(ptr);
+	return (ptr);
 }
