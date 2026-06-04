@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/04 10:29:46 by mnoda-ta          #+#    #+#             */
+/*   Updated: 2026/06/04 10:29:49 by mnoda-ta         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
-static char	*join_bucket(char *bucket, size_t *bucket_len, char *buffer, int bytes_read)
+static char	*join_bucket(char *bucket, size_t *bucket_len, char *buffer,
+		int bytes_read)
 {
 	char	*temp;
 
@@ -14,8 +27,8 @@ static char	*join_bucket(char *bucket, size_t *bucket_len, char *buffer, int byt
 static char	*read_line(int fd, char *bucket)
 {
 	char	*buffer;
-	int		bytes_read;
 	size_t	bucket_len;
+	int		bytes_read;
 
 	buffer = malloc(BUFFER_SIZE + 1);
 	if (!buffer)
@@ -26,15 +39,11 @@ static char	*read_line(int fd, char *bucket)
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read < 0)
-		{
-			free(buffer);
-			free(bucket);
-			return (NULL);
-		}
+			return (ft_free(buffer, bucket));
 		buffer[bytes_read] = '\0';
 		bucket = join_bucket(bucket, &bucket_len, buffer, bytes_read);
 		if (!bucket)
-			return (free(buffer), NULL);
+			return (ft_free(buffer, NULL));
 		if (ft_strchr(buffer, '\n'))
 			break ;
 	}
@@ -42,82 +51,79 @@ static char	*read_line(int fd, char *bucket)
 	return (bucket);
 }
 
-static char *extract_line(char *bucket)
+static char	*extract_line(char *bucket)
 {
-    char *line;
-    int i;
+	char	*line;
+	int		i;
 
-    i= 0;
-    while(bucket[i] != '\0' && bucket[i] != '\n')
-        i++;
-    if(bucket[i] =='\n')
-        i++;
-    line = malloc(sizeof(char) * (i + 1));
-    if(!line)
-        return(NULL);
-    i = 0;
-    while(bucket[i] != '\0' && bucket[i] != '\n')
-    {
-        line[i] = bucket[i];
-        i++;
-    }
-    if(bucket[i] == '\n')
-        line[i++] = '\n';
-    line[i] = '\0';
-    return(line);
+	i = 0;
+	while (bucket[i] != '\0' && bucket[i] != '\n')
+		i++;
+	if (bucket[i] == '\n')
+		i++;
+	line = malloc(sizeof(char) * (i + 1));
+	if (!line)
+		return (NULL);
+	i = 0;
+	while (bucket[i] != '\0' && bucket[i] != '\n')
+	{
+		line[i] = bucket[i];
+		i++;
+	}
+	if (bucket[i] == '\n')
+		line[i++] = '\n';
+	line[i] = '\0';
+	return (line);
 }
 
-static char *update_bucket(char *bucket)
+static char	*update_bucket(char *bucket)
 {
-    char *new_line;
-    int i;
-    int j;
+	char	*new_line;
+	int		i;
+	int		j;
 
-    i = 0;
-    while(bucket[i] != '\0' && bucket[i] != '\n')
-        i++;
-    if(!bucket[i])
-    {
-        free(bucket);
-        return(NULL);
-    }
-    i++;
-    new_line = malloc(sizeof(char) * (ft_strlen(bucket + i) + 1));
-    if(!new_line)
-        return(NULL);
-    j = 0;
-    while(bucket[i] != '\0')
-    {
-        new_line[j] = bucket[i];
-        i++;
-        j++;
-    }
-    new_line[j] = '\0';
-    free(bucket);
-    return(new_line);
+	i = 0;
+	while (bucket[i] != '\0' && bucket[i] != '\n')
+		i++;
+	if (!bucket[i])
+		return (ft_free(bucket, NULL));
+	i++;
+	new_line = malloc(sizeof(char) * (ft_strlen(bucket + i) + 1));
+	if (!new_line)
+		return (NULL);
+	j = 0;
+	while (bucket[i] != '\0')
+	{
+		new_line[j] = bucket[i];
+		i++;
+		j++;
+	}
+	new_line[j] = '\0';
+	free(bucket);
+	return (new_line);
 }
 
 char	*get_next_line(int fd)
 {
-    static char *bucket;
-    char *line;
+	static char	*bucket;
+	char		*line;
 
-    if(fd < 0 || BUFFER_SIZE <= 0)
-        return(NULL);
-    if(!bucket)
-    {
-        bucket = ft_calloc(1, sizeof(char));
-        if(!bucket)
-            return(NULL);
-    }
-    bucket = read_line(fd, bucket);
-    if(!bucket || !bucket[0])
-    {
-        free(bucket);
-        bucket = NULL;
-        return(NULL);
-    }
-    line = extract_line(bucket);
-    bucket = update_bucket(bucket);
-    return(line);
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	if (!bucket)
+	{
+		bucket = ft_calloc(1, sizeof(char));
+		if (!bucket)
+			return (NULL);
+	}
+	bucket = read_line(fd, bucket);
+	if (!bucket || !bucket[0])
+	{
+		free(bucket);
+		bucket = NULL;
+		return (NULL);
+	}
+	line = extract_line(bucket);
+	bucket = update_bucket(bucket);
+	return (line);
 }
