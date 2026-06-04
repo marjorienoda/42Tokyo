@@ -35,7 +35,7 @@ static char	*read_line(int fd, char *bucket)
 		return (NULL);
 	bucket_len = ft_strlen(bucket);
 	bytes_read = 1;
-	while (bytes_read > 0)
+	while (bytes_read > 0 && !ft_strchr(bucket, '\n'))
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read < 0)
@@ -44,8 +44,6 @@ static char	*read_line(int fd, char *bucket)
 		bucket = join_bucket(bucket, &bucket_len, buffer, bytes_read);
 		if (!bucket)
 			return (ft_free(buffer, NULL));
-		if (ft_strchr(buffer, '\n'))
-			break ;
 	}
 	free(buffer);
 	return (bucket);
