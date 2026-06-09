@@ -27,7 +27,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n);
 */
 
 void ft_error(char *str);
-int is_valid_input(int argc, char **argv);
-int get_start_pos(int argc, char **argv)
+void is_valid_input(int argc, char **argv);
+int get_start_pos(int argc, char **argv);
 
 #endif
