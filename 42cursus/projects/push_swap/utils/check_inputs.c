@@ -30,33 +30,21 @@ static int is_valid_chars(char *str)
 	return(1);
 }
 
-int is_valid_input(int argc, char **argv)
+void is_valid_input(int argc, char **argv)
 {
-	int i;
-	long nb;
+    int  i;
+    long nb;
 
-	if(argc < 2)
-		return(0);
-	else
-	{
-		i = 1;
-		while(i < argc)
-		{
-			nb = ft_atoil(argv[i]);
-			if(!is_valid_chars(argv[i]))
-                ft_error("Error");
-			if(check_dup_nb(nb, argv, i))
-			    ft_error("Error");
-			if(nb < -2147483648 || nb > 2147483647)
-			    ft_error("Error");
-			i++;
-		}
-	}
-	return((int) nb);
+    i = get_start_pos(argc, argv);
+    while (i < argc)
+    {
+        nb = ft_atoil(argv[i]);
+        if (!is_valid_chars(argv[i]))
+            ft_error("Error");
+        if (check_dup_nb(nb, argv, i))
+            ft_error("Error");
+        if (nb < -2147483648 || nb > 2147483647)
+            ft_error("Error");
+        i++;
+    }
 }
-
-struct 
-
---simple
-flag
-opt.flag..ksksksks
