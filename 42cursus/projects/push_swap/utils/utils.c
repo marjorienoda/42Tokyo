@@ -1,7 +1,8 @@
 #include "../push_swap.h"
+
 void ft_error(char *str)
 {
-    ft_putendl_fd(str, 2);
+    ft_printf("%s\n",2, str);
     exit(1);
 }
 
@@ -19,42 +20,44 @@ int get_start_pos(int argc, char **argv)
     return(i);
 }
 
-int is_bench(char **argv)
+static int	is_flag(char *arg, char *flag)
 {
-    if(argv[1] == '--bench')
-        return(0);
-    return(1);
+    return (ft_strncmp(arg, flag, ft_strlen(flag)) == 0);
 }
 
-t_strategy get_strategy_flag(char **argv)
+int is_bench(int argc, char **argv)
+{
+    int i;
+    
+    i = 0;
+    while(i < argc)
+    {
+        if(is_flag(argv[i], "--bench"))
+            return(1);
+        i++;
+    }
+    return(0);
+}
+
+t_strategy get_strategy_flag(int argc, char **argv)
 {
     t_strategy strg_flag;
 
-    if(argv[1][0] == '-' && argv[1][1] == '-' && is_bench(argv) == 1)
+    int i;
+    i = 0;
+    strg_flag = ADAPTIVE;
+    while(i < argc)
     {
-        if(ft_strncmp(argv[1], "--simple", ft_strlen("--simple")) == 0)
+        if (is_flag(argv[i], "--simple"))
             strg_flag = SIMPLE;
-        else if(ft_strncmp(argv[1], "--medium", ft_strlen("--medium")) == 0)
+        else if (is_flag(argv[i], "--medium"))
             strg_flag = MEDIUM;
-        else if(ft_strncmp(argv[1], "--complex", ft_strlen("--complex")) == 0)
+        else if (is_flag(argv[i], "--complex"))
             strg_flag = COMPLEX;
-        else if(ft_strncmp(argv[1], "--adaptive", ft_strlen("--adaptive")) == 0)
+        else if (is_flag(argv[i], "--adaptive"))
             strg_flag = ADAPTIVE;
-        else
-            strg_flag = ADAPTIVE;
+        i++;
     }
-    else if(argv[2][0] == '-' && argv[2][1] == '-' && is_bench(argv) == 0)
-    {
-        if(ft_strncmp(argv[1], "--simple", ft_strlen("--simple")) == 0)
-            strg_flag = SIMPLE;
-        else if(ft_strncmp(argv[1], "--medium", ft_strlen("--medium")) == 0)
-            strg_flag = MEDIUM;
-        else if(ft_strncmp(argv[1], "--complex", ft_strlen("--complex")) == 0)
-            strg_flag = COMPLEX;
-        else if(ft_strncmp(argv[1], "--adaptive", ft_strlen("--adaptive")) == 0)
-            strg_flag = ADAPTIVE;
-        else
-            strg_flag = ADAPTIVE;
-    }
+
     return(strg_flag);
 }
