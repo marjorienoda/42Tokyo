@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/11 12:08:29 by mnoda-ta          #+#    #+#             */
+/*   Updated: 2026/06/11 12:08:31 by mnoda-ta         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 #include <stdarg.h>
 
@@ -12,7 +24,7 @@ static int	print_format(va_list list, char s, int fd)
 		counter += ft_putstr_fd(va_arg(list, char *), fd);
 	if (s == 'd' || s == 'i')
 		counter += ft_putnbr_fd(va_arg(list, int), fd);
-	if(s == 'f')
+	if (s == 'f')
 		counter += ft_putdouble_fd(va_arg(list, double), fd);
 	if (s == '%')
 		counter += ft_putchar_fd('%', fd);
