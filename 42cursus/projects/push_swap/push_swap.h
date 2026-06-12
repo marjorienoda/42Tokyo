@@ -43,6 +43,14 @@ typedef struct bench_mode
 	int			rrr_ops;
 }				t_bench;
 
+typedef struct s_node
+{
+    int             value;
+    int             index;
+    struct s_node   *next;
+    struct s_node   *prev;
+}   t_node;
+
 /*
 	====== LIBFT ======
 */
@@ -69,5 +77,31 @@ int				is_bench(int argc, char **argv);
 t_strategy		get_strategy_flag(int argc, char **argv);
 void			init_bench(t_bench *bench, t_strategy flag);
 void			print_bench_mode(t_bench *bench);
+void ft_free_stack(t_node *stack);
+t_node *stack_last(t_node *node);
+t_node *create_new_node(int nb);
+t_node *init_stack_a(int argc, char **argv, int start);
+void stack_add_bottom(t_node **stack, t_node *new);
+int	stack_size(t_node *stack);
 
+/*
+	====== OPERATIONS ======
+*/
+
+void swap_op(t_node **stack);
+void rotate_op(t_node **stack);
+void reverse_rotate_op(t_node **stack);
+void sa_op(t_node **stack_a, t_bench *bench);
+void sb_op(t_node **stack_b, t_bench *bench);
+void ss_op(t_node **stack_a, t_node **stack_b, t_bench *bench);
+void pb_op(t_node **stack_a, t_node **stack_b, t_bench *bench);
+void pa_op(t_node **stack_a, t_node **stack_b, t_bench *bench);
+void ra_op(t_node **stack_a, t_bench *bench);
+void rb_op(t_node **stack_b, t_bench *bench);
+void rr_op(t_node **stack_a, t_node **stack_b, t_bench *bench);
+void rra_op(t_node **stack_a, t_bench *bench);
+void rrb_op(t_node **stack_b, t_bench *bench);
+void rrr_op(t_node **stack_a, t_node **stack_b, t_bench *bench);
+
+int find_min_pos(t_node *stack);
 #endif

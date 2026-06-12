@@ -15,25 +15,41 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+static void print_stack(t_node *stack)
+{
+    t_node *current;
+
+    current = stack;
+    while (current != NULL)
+    {
+        printf("value: %d | prev: %p | next: %p\n", 
+            current->value, 
+            (void *)current->prev, 
+            (void *)current->next);
+        current = current->next;
+    }
+}
+
 int	main(int argc, char **argv)
 {
 	int			start;
 	t_strategy	flag;
 	t_bench		bench;
+	t_node *stack_a;
+	int min_pos;
+	// t_node *stack_b;
 
-	// int bench_flg;
 	if (argc < 2)
 		return (0);
 	is_valid_input(argc, argv);
 	start = get_start_pos(argc, argv);
 	flag = get_strategy_flag(argc, argv);
-	// bench_flg = is_bench(argc, argv);
-	init_bench(&bench, get_strategy_flag(argc, argv));
-	printf("start: %d \n", start);
-	printf("flag: %d \n", flag);
-	// printf("bench: %d \n", bench_flg);
-	// printf("disorder: %f\n", bench.disorder);
-	// printf("total_ops: %d\n", bench.total_ops);
-	print_bench_mode(&bench);
+	init_bench(&bench, flag);
+	stack_a = init_stack_a(argc,argv, start);
+	print_stack(stack_a);
+	min_pos = find_min_pos(stack_a);
+	printf("min pos: %d \n", min_pos);
+	ft_free_stack(stack_a);
+	// ft_free_stack(stack_b);
 	return (0);
 }
