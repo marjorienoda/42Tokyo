@@ -104,4 +104,5 @@ void rrb_op(t_node **stack_b, t_bench *bench);
 void rrr_op(t_node **stack_a, t_node **stack_b, t_bench *bench);
 
 int find_min_pos(t_node *stack);
+void simple_strag(t_node **stack_a, t_node **stack_b, t_bench *bench);
 #endif
