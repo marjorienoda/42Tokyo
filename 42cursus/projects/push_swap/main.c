@@ -15,20 +15,20 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-static void print_stack(t_node *stack)
-{
-    t_node *current;
+// static void print_stack(t_node *stack)
+// {
+//     t_node *current;
 
-    current = stack;
-    while (current != NULL)
-    {
-        printf("value: %d | prev: %p | next: %p\n", 
-            current->value, 
-            (void *)current->prev, 
-            (void *)current->next);
-        current = current->next;
-    }
-}
+//     current = stack;
+//     while (current != NULL)
+//     {
+//         printf("value: %d | prev: %p | next: %p\n", 
+//             current->value, 
+//             (void *)current->prev, 
+//             (void *)current->next);
+//         current = current->next;
+//     }
+// }
 
 int	main(int argc, char **argv)
 {
@@ -36,8 +36,7 @@ int	main(int argc, char **argv)
 	t_strategy	flag;
 	t_bench		bench;
 	t_node *stack_a;
-	int min_pos;
-	// t_node *stack_b;
+	t_node *stack_b;
 
 	if (argc < 2)
 		return (0);
@@ -45,11 +44,13 @@ int	main(int argc, char **argv)
 	start = get_start_pos(argc, argv);
 	flag = get_strategy_flag(argc, argv);
 	init_bench(&bench, flag);
-	stack_a = init_stack_a(argc,argv, start);
-	print_stack(stack_a);
-	min_pos = find_min_pos(stack_a);
-	printf("min pos: %d \n", min_pos);
+	stack_a = init_stack_a(argc, argv, start);
+	stack_b = NULL;
+	if (flag == SIMPLE)
+		simple_strag(&stack_a, &stack_b, &bench);
+	if (is_bench(argc, argv))
+		print_bench_mode(&bench);
 	ft_free_stack(stack_a);
-	// ft_free_stack(stack_b);
+	ft_free_stack(stack_b);
 	return (0);
 }
