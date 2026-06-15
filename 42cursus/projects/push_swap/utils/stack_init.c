@@ -25,7 +25,10 @@ t_node *init_stack_a(int argc, char **argv, int start)
         nb = ft_atoil(argv[start]);
         new_node = create_new_node(nb);
         if (!new_node)
+        {
             ft_free_stack(stack_a);
+            return(NULL);
+        }
         stack_add_bottom(&stack_a, new_node);
         start++;
     }
