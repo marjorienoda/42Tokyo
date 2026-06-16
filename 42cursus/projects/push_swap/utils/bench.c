@@ -14,7 +14,7 @@
 
 void	init_bench(t_bench *bench, t_strategy flag)
 {
-	bench->disorder = 0.02;
+	bench->disorder = 0.00;
 	bench->strategy_flag = flag;
 	bench->actual_flag = flag;
 	bench->total_ops = 0;

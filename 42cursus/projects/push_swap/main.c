@@ -22,9 +22,9 @@
 //     current = stack;
 //     while (current != NULL)
 //     {
-//         printf("value: %d | prev: %p | next: %p\n", 
-//             current->value, 
-//             (void *)current->prev, 
+//         printf("value: %d | prev: %p | next: %p\n",
+//             current->value,
+//             (void *)current->prev,
 //             (void *)current->next);
 //         current = current->next;
 //     }
@@ -35,8 +35,8 @@ int	main(int argc, char **argv)
 	int			start;
 	t_strategy	flag;
 	t_bench		bench;
-	t_node *stack_a;
-	t_node *stack_b;
+	t_node		*stack_a;
+	t_node		*stack_b;
 
 	if (argc < 2)
 		return (0);
