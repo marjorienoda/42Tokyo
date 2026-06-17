@@ -81,3 +81,13 @@ int	find_min_pos(t_node *stack)
 	}
 	return (min_pos);
 }
+
+int get_max_bits(int size)
+{
+	int max_bits;
+
+	max_bits = 0;
+	while((1 << max_bits) < size)
+		max_bits++;
+	return(max_bits);
+}

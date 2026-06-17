@@ -104,6 +104,12 @@ void				rrb_op(t_node **stack_b, t_bench *bench);
 void				rrr_op(t_node **stack_a, t_node **stack_b, t_bench *bench);
 
 int					find_min_pos(t_node *stack);
+int *create_array_tmp(t_node *stack_a, int size);
+void swap(int *prev, int *next);
+void bubble_sort(int *array, int size);
+void fill_index_stack(t_node *stack_a, int *array, int size);
+int get_max_bits(int size);
 void				simple_strag(t_node **stack_a, t_node **stack_b,
 						t_bench *bench);
+void complex_strag(t_node **stack_a, t_node **stack_b, t_bench *bench);
 #endif
