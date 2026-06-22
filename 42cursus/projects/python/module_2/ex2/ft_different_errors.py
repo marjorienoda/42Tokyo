@@ -19,12 +19,8 @@ def test_error_types() -> None:
             print(f"Testing operation {i}...")
             garden_operations(i)
             print("Operation completed successfully")
-        except ValueError as e:
-            print(f"Caught ValueError: {e}")
-        except ZeroDivisionError as e:
-            print(f"Caught ZeroDivisionError: {e}")
-        except FileNotFoundError as e:
-            print(f"Caught FileNotFoundError: {e}")
-        except TypeError as e:
-            print(f"Caught TypeError: {e}")
+        except (ValueError, ZeroDivisionError, FileNotFoundError,
+                TypeError) as e:
+            error_name = e.__class__.__name__
+            print(f"Caught {error_name}: {e}")
     print("\nAll error types tested successfully!")
