@@ -97,7 +97,7 @@ class Seed(Flower):
         super().show()
         print(f"Seeds: {self.seeds_nb}")
     
-    def bloom(self, seeds_nb: int)-> None:
+    def bloom(self, seeds_nb: int = 0)-> None:
         self.seeds_nb = seeds_nb
         super().bloom()
     
