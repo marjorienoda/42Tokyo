@@ -28,6 +28,3 @@ def test_error_types() -> None:
         except TypeError as e:
             print(f"Caught TypeError: {e}")
     print("\nAll error types tested successfully!")
-
-if __name__ == "__main__":
-    test_error_types()
