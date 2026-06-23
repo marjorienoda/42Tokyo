@@ -43,6 +43,13 @@ typedef struct bench_mode
 	int				rrr_ops;
 }					t_bench;
 
+typedef struct s_chunk
+{
+	int				min;
+	int				max;
+	int				size;
+}					t_chunk;
+
 typedef struct s_node
 {
 	int				value;
@@ -113,10 +120,9 @@ void				simple_strag(t_node **stack_a, t_node **stack_b,
 						t_bench *bench);
 void				complex_strag(t_node **stack_a, t_node **stack_b,
 						t_bench *bench);
-
-void				chunk_sort(t_node **a, t_node **b, int chunk_size,
-						t_bench *bench);
 int					ft_chunk(int size);
+void				move_max_to_top(t_node **stack_b, t_bench *bench);
 void				push_chunks(t_node **stack_a, t_node **stack_b,
 						int chunk_size, t_bench *bench);
+void				medium_strag(t_node **a, t_node **b, t_bench *bench);
 #endif
