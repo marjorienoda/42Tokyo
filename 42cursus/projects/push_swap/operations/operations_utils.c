@@ -26,7 +26,6 @@ void	swap_op(t_node **stack)
 		temp->next->prev = *stack;
 	temp->next = *stack;
 	*stack = temp;
-	ft_printf("sa\n", 1);
 }
 
 void	rotate_op(t_node **stack)

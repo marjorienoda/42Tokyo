@@ -36,7 +36,9 @@ void	pb_op(t_node **stack_a, t_node **stack_b, t_bench *bench)
 		*stack_b = node_to_move;
 	}
 	if (bench)
+	{
 		bench->pb_ops++;
-	bench->total_ops++;
+		bench->total_ops++;
+	}
 	ft_printf("pb\n", 1);
 }

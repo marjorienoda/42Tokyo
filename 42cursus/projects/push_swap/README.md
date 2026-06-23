@@ -61,6 +61,16 @@ The algorithm repeatedly finds the minimum element in stack A, rotates the stack
 
 This approach is justified for low-disorder inputs because the stack is nearly sorted, meaning the minimum element is likely close to the top, keeping the rotation cost low.
 
+### Complex — Radix Sort O(n log n)
+
+Triggered by `--complex` and by `--adaptive` when disorder ≥ 0.5.
+
+Before sorting, each value in stack A is replaced by a normalized index from 0 to n-1, where the smallest value receives index 0 and the largest receives index n-1. This is done by copying the values to a temporary array, sorting it with bubble sort, and then assigning each node its position in the sorted array.
+
+The algorithm then sorts bit by bit, from the least significant bit to the most significant. For each bit position, every element at the top of stack A is examined — if its bit is 0, it is pushed to stack B with `pb`; if its bit is 1, it stays in A with `ra`. After processing all n elements, everything is pushed back from B to A with `pa`. This process repeats for log₂(n) passes.
+
+This is justified for high-disorder inputs because the stack is far from sorted and a bit-based approach guarantees O(n log n) performance regardless of the initial order — n elements processed per pass, log₂(n) passes total.
+
 ## Contributions
 
 **\<mnoda-ta\> (Marjorie)**
@@ -69,6 +79,7 @@ This approach is justified for low-disorder inputs because the stack is nearly s
 - Strategy flag manager
 - Benchmark mode
 - Simple algorithm
+- Complex algorithm
 - Doubly linked list implementation
 - The 11 push_swap operations
 
