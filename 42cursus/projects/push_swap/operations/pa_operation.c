@@ -24,6 +24,7 @@ void	pa_op(t_node **stack_a, t_node **stack_b, t_bench *bench)
 		(*stack_b)->prev = NULL;
 	if (!*stack_a)
 	{
+		first_node(node_to_move);
 		node_to_move->prev = NULL;
 		node_to_move->next = NULL;
 		(*stack_a) = node_to_move;

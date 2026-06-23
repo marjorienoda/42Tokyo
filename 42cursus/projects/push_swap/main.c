@@ -15,10 +15,13 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-static void run_flag(t_strategy flag, t_node **stack_a, t_node **stack_b, t_bench *bench)
+static void	run_flag(t_strategy flag, t_node **stack_a, t_node **stack_b,
+		t_bench *bench)
 {
-	if(flag == SIMPLE)
-		simple_strag(stack_a, stack_b, bench); 
+	if (flag == SIMPLE)
+		simple_strag(stack_a, stack_b, bench);
+	else if (flag == MEDIUM)
+		medium_strag(stack_a, stack_b, bench);
 	else if (flag == COMPLEX)
 		complex_strag(stack_a, stack_b, bench);
 }
