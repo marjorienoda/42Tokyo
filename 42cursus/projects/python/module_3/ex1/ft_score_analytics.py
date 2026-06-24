@@ -23,4 +23,5 @@ def main():
 
     total_playes = len(scores_processed_list)
     total_score = sum(scores_processed_list)
-    
+    max_score = max(scores_processed_list)
+    min_score = min(scores_processed_list)
