@@ -45,20 +45,20 @@ static char	*print_strategy(t_bench *bench)
 	else if (bench->strategy_flag == ADAPTIVE)
 	{
 		if (bench->actual_flag == SIMPLE)
-			strategy_name = "Adapative / O(n²)";
+			strategy_name = "Adaptive / O(n²)";
 		else if (bench->actual_flag == MEDIUM)
-			strategy_name = "Adapative / O(n√n)";
+			strategy_name = "Adaptive / O(n√n)";
 		else if (bench->actual_flag == COMPLEX)
-			strategy_name = "Adapative / O(n log n)";
+			strategy_name = "Adaptive / O(n log n)";
 		else
-			strategy_name = "Adapative / O(n log n)";
+			strategy_name = "Adaptive / O(n log n)";
 	}
 	return (strategy_name);
 }
 
 void	print_bench_mode(t_bench *bench)
 {
-	ft_printf("[bench] disorder: %f%%\n", 2, bench->disorder);
+	ft_printf("[bench] disorder: %f%%\n", 2, bench->disorder * 100);
 	ft_printf("[bench] strategy: %s\n", 2, print_strategy(bench));
 	ft_printf("[bench] total_ops: %d\n", 2, bench->total_ops);
 	ft_printf("[bench] sa: %d sb: %d ss: %d pa: %d pb: %d\n", 2, bench->sa_ops,

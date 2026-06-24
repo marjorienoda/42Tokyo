@@ -26,7 +26,8 @@ SRC_OPERATIONS = operations/operations_utils.c operations/index_utils.c \
 				 operations/sa_operation.c operations/sb_operation.c \
 				 operations/ss_operation.c operations/simple_strategy.c \
 				 operations/complex_strategy.c operations/medium_utils.c \
-				 operations/medium_strategy.c 
+				 operations/medium_strategy.c operations/adaptive_strategy.c \
+				 operations/disorder.c
 
 SRC_LIBFT = libft/ft_atoil.c libft/ft_isdigit.c \
 			libft/ft_printf.c libft/ft_putchar_fd.c \

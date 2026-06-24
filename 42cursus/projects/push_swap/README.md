@@ -1,5 +1,4 @@
-*This project has been created as part
-of the 42 curriculum by mnoda-ta, makrivor.*
+*This project has been created as part of the 42 curriculum by mnoda-ta, makrivor.*
 
 # PUSH_SWAP
 
@@ -61,6 +60,14 @@ The algorithm repeatedly finds the minimum element in stack A, rotates the stack
 
 This approach is justified for low-disorder inputs because the stack is nearly sorted, meaning the minimum element is likely close to the top, keeping the rotation cost low.
 
+### Medium — Chunk Sort O(n√n)
+
+Triggered by `--medium` and by `--adaptive` when 0.2 ≤ disorder < 0.5.
+
+The values are first normalized to indices from 0 to n-1. The stack is then divided into √n chunks based on index ranges. Elements belonging to each chunk are pushed to stack B in order using `pb`, rotating stack A with `ra` when the current element does not belong to the current chunk. Once all chunks are in B, elements are pushed back to A by finding the maximum remaining element in B and rotating with `rb` or `rrb` to bring it to the top before pushing with `pa`.
+
+This is justified for medium-disorder inputs because the partial ordering means chunk boundaries align reasonably well with the actual value distribution, reducing unnecessary rotations compared to a fully disordered stack.
+
 ### Complex — Radix Sort O(n log n)
 
 Triggered by `--complex` and by `--adaptive` when disorder ≥ 0.5.
@@ -70,6 +77,14 @@ Before sorting, each value in stack A is replaced by a normalized index from 0 t
 The algorithm then sorts bit by bit, from the least significant bit to the most significant. For each bit position, every element at the top of stack A is examined — if its bit is 0, it is pushed to stack B with `pb`; if its bit is 1, it stays in A with `ra`. After processing all n elements, everything is pushed back from B to A with `pa`. This process repeats for log₂(n) passes.
 
 This is justified for high-disorder inputs because the stack is far from sorted and a bit-based approach guarantees O(n log n) performance regardless of the initial order — n elements processed per pass, log₂(n) passes total.
+
+### Adaptive Engine
+
+When no flag is given or `--adaptive` is used, the program computes the disorder of the initial stack — a value between 0 and 1 — and selects the strategy accordingly:
+
+- disorder < 0.2 → Simple O(n²)
+- 0.2 ≤ disorder < 0.5 → Medium O(n√n)
+- disorder ≥ 0.5 → Complex O(n log n)
 
 ## Contributions
 
@@ -82,6 +97,15 @@ This is justified for high-disorder inputs because the stack is far from sorted 
 - Complex algorithm
 - Doubly linked list implementation
 - The 11 push_swap operations
+
+**\<makrivor\> (Margarita)**
+- Medium Algorithm
+- Adaptive Algorithm
+- Disorder function
+
+**Both**
+- Indexing
+- Norminette check
 
 ## Resources
 - [Stack in C](https://www.geeksforgeeks.org/c/implement-stack-in-c/)
@@ -101,4 +125,6 @@ This is justified for high-disorder inputs because the stack is far from sorted 
 Claude was used during this project to:
 - Explain and debug the doubly linked list pointer logic for the 11 operations
 - Identify performance issues in the sorting algorithm and understand O(n²) vs O(n log n) complexity
+- Explain the Radix Sort and Chunk Sort
+- Grammar checking and proofreading for the README 
 - Review code structure and Norm compliance

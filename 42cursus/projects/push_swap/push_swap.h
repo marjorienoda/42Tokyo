@@ -98,6 +98,7 @@ int					stack_size(t_node *stack);
 void				swap_op(t_node **stack);
 void				rotate_op(t_node **stack);
 void				reverse_rotate_op(t_node **stack);
+void	push_to_top(t_node **stack_a, t_node *node_to_move);
 void				sa_op(t_node **stack_a, t_bench *bench);
 void				sb_op(t_node **stack_b, t_bench *bench);
 void				ss_op(t_node **stack_a, t_node **stack_b, t_bench *bench);
@@ -110,19 +111,21 @@ void				rra_op(t_node **stack_a, t_bench *bench);
 void				rrb_op(t_node **stack_b, t_bench *bench);
 void				rrr_op(t_node **stack_a, t_node **stack_b, t_bench *bench);
 
-int					find_min_pos(t_node *stack);
 int					*create_array_tmp(t_node *stack_a, int size);
 void				swap(int *prev, int *next);
 int					*bubble_sort(int *array, int size);
 void				fill_index_stack(t_node *stack_a, int *array, int size);
 int					get_max_bits(int size);
-void				simple_strag(t_node **stack_a, t_node **stack_b,
-						t_bench *bench);
-void				complex_strag(t_node **stack_a, t_node **stack_b,
-						t_bench *bench);
+
 int					ft_chunk(int size);
 void				move_max_to_top(t_node **stack_b, t_bench *bench);
 void				push_chunks(t_node **stack_a, t_node **stack_b,
 						int chunk_size, t_bench *bench);
-void				medium_strag(t_node **a, t_node **b, t_bench *bench);
+double	ft_disorder(t_node *stack, t_bench *bench);
+void				simple_strag(t_node **stack_a, t_node **stack_b,
+						t_bench *bench);
+void				medium_strag(t_node **a, t_node **b, t_bench *bench);						
+void				complex_strag(t_node **stack_a, t_node **stack_b,
+						t_bench *bench);
+void	adaptive_strag(t_node **stack_a, t_node **stack_b, t_bench *bench);
 #endif
