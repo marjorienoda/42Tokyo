@@ -59,28 +59,22 @@ void	reverse_rotate_op(t_node **stack)
 	*stack = last;
 }
 
-int	find_min_pos(t_node *stack)
+void	push_to_top(t_node **stack, t_node *node_to_move)
 {
-	int		min_pos;
-	int		i;
-	long	min;
-
-	i = 0;
-	min_pos = 0;
-	min = stack->value;
-	while (stack != NULL)
+	if (!*stack)
 	{
-		if (stack->value < min)
-		{
-			min = stack->value;
-			min_pos = i;
-		}
-		i++;
-		stack = stack->next;
+		node_to_move->prev = NULL;
+		node_to_move->next = NULL;
+		*stack = node_to_move;
 	}
-	return (min_pos);
+	else
+	{
+		node_to_move->prev = NULL;
+		node_to_move->next = *stack;
+		(*stack)->prev = node_to_move;
+		*stack = node_to_move;
+	}
 }
-
 int	get_max_bits(int size)
 {
 	int	max_bits;

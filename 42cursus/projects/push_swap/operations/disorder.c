@@ -6,13 +6,13 @@
 /*   By: makrivor <makrivor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 18:02:46 by makrivor          #+#    #+#             */
-/*   Updated: 2026/06/23 18:03:01 by makrivor         ###   ########.fr       */
+/*   Updated: 2026/06/23 18:51:09 by makrivor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-float	ft_disorder(t_node *stack)
+double	ft_disorder(t_node *stack, t_bench *bench)
 {
 	int		mistakes;
 	int		total_pairs;
@@ -21,7 +21,7 @@ float	ft_disorder(t_node *stack)
 
 	total_pairs = 0;
 	mistakes = 0;
-	current = stack->prev;
+	current = stack;
 	while (current)
 	{
 		next = current->next;
@@ -36,5 +36,6 @@ float	ft_disorder(t_node *stack)
 	}
 	if (total_pairs == 0)
 		return (0.0f);
-	return (((float)mistakes / total_pairs));
+	bench->disorder = (double)mistakes / total_pairs;
+	return (((double)mistakes / total_pairs));
 }

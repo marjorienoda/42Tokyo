@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnoda-ta <mnoda-ta@student.42tokyo.jp      +#+  +:+       +#+        */
+/*   By: makrivor <makrivor@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 12:11:04 by mnoda-ta          #+#    #+#             */
-/*   Updated: 2026/06/11 12:11:06 by mnoda-ta         ###   ########.fr       */
+/*   Updated: 2026/06/23 18:52:54 by makrivor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 
 static void	run_flag(t_strategy flag, t_node **stack_a, t_node **stack_b,
 		t_bench *bench)
@@ -24,6 +21,8 @@ static void	run_flag(t_strategy flag, t_node **stack_a, t_node **stack_b,
 		medium_strag(stack_a, stack_b, bench);
 	else if (flag == COMPLEX)
 		complex_strag(stack_a, stack_b, bench);
+	else if (flag == ADAPTIVE)
+		adaptive_strag(stack_a, stack_b, bench);
 }
 
 int	main(int argc, char **argv)
@@ -42,6 +41,7 @@ int	main(int argc, char **argv)
 	init_bench(&bench, flag);
 	stack_a = init_stack_a(argc, argv, start);
 	stack_b = NULL;
+	ft_disorder(stack_a, &bench);
 	run_flag(flag, &stack_a, &stack_b, &bench);
 	if (is_bench(argc, argv))
 		print_bench_mode(&bench);

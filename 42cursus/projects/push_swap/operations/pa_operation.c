@@ -22,20 +22,7 @@ void	pa_op(t_node **stack_a, t_node **stack_b, t_bench *bench)
 	(*stack_b) = (*stack_b)->next;
 	if (*stack_b)
 		(*stack_b)->prev = NULL;
-	if (!*stack_a)
-	{
-		first_node(node_to_move);
-		node_to_move->prev = NULL;
-		node_to_move->next = NULL;
-		(*stack_a) = node_to_move;
-	}
-	else
-	{
-		node_to_move->prev = NULL;
-		node_to_move->next = *stack_a;
-		(*stack_a)->prev = node_to_move;
-		*stack_a = node_to_move;
-	}
+	push_to_top(stack_a, node_to_move);
 	if (bench)
 	{
 		bench->pa_ops++;
