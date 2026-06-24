@@ -41,8 +41,8 @@ int	main(int argc, char **argv)
 	init_bench(&bench, flag);
 	stack_a = init_stack_a(argc, argv, start);
 	stack_b = NULL;
-	ft_disorder(stack_a, &bench);
-	run_flag(flag, &stack_a, &stack_b, &bench);
+	if(ft_disorder(stack_a, &bench) > 0)
+		run_flag(flag, &stack_a, &stack_b, &bench);
 	if (is_bench(argc, argv))
 		print_bench_mode(&bench);
 	ft_free_stack(stack_a);
