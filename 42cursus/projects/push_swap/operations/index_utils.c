@@ -32,7 +32,7 @@ int	*create_array_tmp(t_node *stack_a, int size)
 	return (array_tmp);
 }
 
-void	swap(int *prev, int *next)
+static void	swap(int *prev, int *next)
 {
 	int	tmp;
 

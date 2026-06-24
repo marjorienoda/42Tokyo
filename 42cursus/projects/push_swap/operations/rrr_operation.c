@@ -14,8 +14,8 @@
 
 void	rrr_op(t_node **stack_a, t_node **stack_b, t_bench *bench)
 {
-	rra_op(stack_a, bench);
-	rrb_op(stack_b, bench);
+	reverse_rotate_op(stack_a);
+	reverse_rotate_op(stack_b);
 	if (bench)
 	{
 		bench->rrr_ops++;

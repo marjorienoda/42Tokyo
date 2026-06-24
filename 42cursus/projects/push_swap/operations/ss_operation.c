@@ -14,8 +14,8 @@
 
 void	ss_op(t_node **stack_a, t_node **stack_b, t_bench *bench)
 {
-	sa_op(stack_a, bench);
-	sb_op(stack_b, bench);
+	swap_op(stack_a);
+	swap_op(stack_b);
 	if (bench)
 	{
 		bench->ss_ops++;

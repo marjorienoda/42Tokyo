@@ -111,7 +111,6 @@ When no flag is given or `--adaptive` is used, the program computes the disorder
 - [Stack in C](https://www.geeksforgeeks.org/c/implement-stack-in-c/)
 - [Big O definition](https://www.geeksforgeeks.org/dsa/analysis-algorithms-big-o-analysis/)
 - [Doubly Linked List](https://www.geeksforgeeks.org/dsa/doubly-linked-list/)
-- [Doubly Linked List Tutorial](https://www.geeksforgeeks.org/dsa/doubly-linked-list/)
 - [Swap given nodes in a Doubly Linked List without modifying data](https://www.geeksforgeeks.org/dsa/swap-given-nodes-in-a-doubly-linked-list-without-modifying-data/)
 - [Radix Sort](https://www.geeksforgeeks.org/dsa/radix-sort/)
 - [When to Prefer Enum Instead of Define in C?](https://www.geeksforgeeks.org/c/when-to-use-enum-instead-of-define-in-c/)
