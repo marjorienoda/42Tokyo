@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-double	ft_disorder(t_node *stack, t_bench *bench)
+double	ft_disorder(t_node *stack)
 {
 	int		mistakes;
 	int		total_pairs;
@@ -36,6 +36,5 @@ double	ft_disorder(t_node *stack, t_bench *bench)
 	}
 	if (total_pairs == 0)
 		return (0.0f);
-	bench->disorder = (double)mistakes / total_pairs;
 	return (((double)mistakes / total_pairs));
 }

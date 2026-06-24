@@ -71,6 +71,7 @@ void	medium_strag(t_node **a, t_node **b, t_bench *bench)
 	tmp_array = create_array_tmp(*a, size);
 	tmp_array = bubble_sort(tmp_array, size);
 	fill_index_stack(*a, tmp_array, size);
+	free(tmp_array);
 	chunk_size = ft_chunk(size);
 	push_chunks(a, b, chunk_size, bench);
 	restore_stack(a, b, bench);
