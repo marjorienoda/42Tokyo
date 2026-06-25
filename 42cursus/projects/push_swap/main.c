@@ -42,7 +42,7 @@ int	main(int argc, char **argv)
 	stack_a = init_stack_a(argc, argv, start);
 	stack_b = NULL;
 	bench.disorder = ft_disorder(stack_a);
-	if(bench.disorder > 0)
+	if(!is_sorted(stack_a))
 		run_flag(flag, &stack_a, &stack_b, &bench);
 	if (is_bench(argc, argv))
 		print_bench_mode(&bench);

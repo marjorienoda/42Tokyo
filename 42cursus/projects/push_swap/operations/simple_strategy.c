@@ -50,6 +50,7 @@ void	simple_strag(t_node **stack_a, t_node **stack_b, t_bench *bench)
 			else
 				rra_op(stack_a, bench);
 			min_pos = find_min_pos(*stack_a);
+			size = stack_size(*stack_a);
 		}
 		pb_op(stack_a, stack_b, bench);
 	}

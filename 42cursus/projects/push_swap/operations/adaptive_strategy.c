@@ -15,9 +15,18 @@
 void	adaptive_strag(t_node **stack_a, t_node **stack_b, t_bench *bench)
 {
 	if (bench->disorder < 0.2)
+	{
+		bench->actual_flag = SIMPLE;
 		simple_strag(stack_a, stack_b, bench);
+	}
 	else if (bench->disorder >= 0.2 && bench->disorder < 0.5)
+	{
+		bench->actual_flag = MEDIUM;
 		medium_strag(stack_a, stack_b, bench);
+	}
 	else
+	{
+		bench->actual_flag = COMPLEX;
 		complex_strag(stack_a, stack_b, bench);
+	}
 }
