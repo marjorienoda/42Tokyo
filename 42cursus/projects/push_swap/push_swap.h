@@ -90,6 +90,7 @@ t_node				*create_new_node(int nb);
 t_node				*init_stack_a(int argc, char **argv, int start);
 void				stack_add_bottom(t_node **stack, t_node *new);
 int					stack_size(t_node *stack);
+int	is_sorted(t_node *stack);
 
 /*
 	====== OPERATIONS ======
