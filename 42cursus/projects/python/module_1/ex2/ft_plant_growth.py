@@ -11,10 +11,10 @@ class Plant:
     def age(self) -> None:
         self.age_days += 1
     
-    def __str__(self):
+    def __str__(self)-> str:
         return f"{self.name}: {self.height}cm, {self.age_days} days old"
     
-def main():
+def main() -> None:
     plant1: Plant = Plant("Rose", 25.0, 30, 0.8)
 
     print("=== Garden Plant Growth ===")

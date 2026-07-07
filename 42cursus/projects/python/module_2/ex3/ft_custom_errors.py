@@ -27,7 +27,7 @@ def check_water_tank(volume: int) -> None:
         print("Tank volume is ok!")
 
 
-def test_custom_errors():
+def test_custom_errors() -> None:
     print("=== Custom Garden Errors Demo ===\n")
     try:
         print("Testing PlantError...")
