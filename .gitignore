@@ -4,3 +4,4 @@
 *.a
 *.mypy_cache
 checker_linux
+*.txt
