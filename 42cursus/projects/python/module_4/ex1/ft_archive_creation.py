@@ -5,7 +5,7 @@ import typing
 def read_file(file: typing.IO[str]) -> str:
     content = file.read()
     print("---")
-    print(content.rstrip)
+    print(content.rstrip())
     print("---")
     return content
 
@@ -33,8 +33,8 @@ def save_file(new_line: str) -> None:
         except OSError as e:
             print(f"Error saving file '{new_file_name}': {e}")
             return
-        file.write(new_line)
         print(f"Saving data to '{new_file_name}'")
+        file.write(new_line)
         file.close()
         print(f"Data saved in file '{new_file_name}'.")
 
