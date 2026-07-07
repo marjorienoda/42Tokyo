@@ -14,10 +14,10 @@ class Plant:
     def show(self) -> None:
         print(f"Created: {self}")
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.name}: {self.height}cm, {self.age_days} days old"
     
-def main():
+def main() -> None:
     plants = [
         Plant("Rose", 25.0, 30),
         Plant("Oak", 200.0, 365),

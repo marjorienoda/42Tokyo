@@ -24,7 +24,7 @@ def get_player_pos() -> tuple[float, float, float]:
                 is_valid_input = False
                 break
         else:
-            return tuple(coordinates_list)
+            return (coordinates_list[0], coordinates_list[1], coordinates_list[2])
 
 
 def distance(pos1: tuple[float, float, float],
@@ -36,7 +36,7 @@ def distance(pos1: tuple[float, float, float],
     )
 
 
-def main():
+def main() -> None:
     print("=== Game Coordinate System ===\n")
 
     center_pos = (0.0, 0.0, 0.0)
