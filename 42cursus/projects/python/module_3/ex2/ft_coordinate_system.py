@@ -21,10 +21,13 @@ def get_player_pos() -> tuple[float, float, float]:
                     f"Error on parameter '{i}': "
                     f"could not convert string to float: '{i}'"
                 )
-                is_valid_input = False
                 break
         else:
-            return (coordinates_list[0], coordinates_list[1], coordinates_list[2])
+            return (
+                coordinates_list[0],
+                coordinates_list[1],
+                coordinates_list[2]
+            )
 
 
 def distance(pos1: tuple[float, float, float],
