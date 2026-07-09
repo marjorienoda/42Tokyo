@@ -33,7 +33,10 @@ def save_file(new_line: str) -> None:
         try:
             file: typing.IO[str] = open(new_file_name, "w")
         except OSError as e:
-            sys.stderr.write(f"[STDERR] Error opening file '{new_file_name}': {e}\n")
+            sys.stderr.write(
+                f"[STDERR] Error opening file '{new_file_name}': "
+                f"{e}\n"
+            )
             print("Data not saved.")
             return
         print(f"Saving data to '{new_file_name}'")
