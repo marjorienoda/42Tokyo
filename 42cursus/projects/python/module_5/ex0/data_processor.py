@@ -1,18 +1,18 @@
-from abc import ABC, abstractmethod
-from typing import Any
+import typing
+import abc
 
 
-class DataProcessor(ABC):
+class DataProcessor(abc.ABC):
     def __init__(self) -> None:
         self.content: list = []
         self.rank: int = 0
 
-    @abstractmethod
-    def validate(self, data: Any) -> bool:
+    @abc.abstractmethod
+    def validate(self, data: typing.Any) -> bool:
         pass
 
-    @abstractmethod
-    def ingest(self, data: Any) -> None:
+    @abc.abstractmethod
+    def ingest(self, data: typing.Any) -> None:
         pass
 
     def output(self) -> tuple[int, str]:
@@ -20,7 +20,7 @@ class DataProcessor(ABC):
 
 
 class NumericProcessor(DataProcessor):
-    def validate(self, data: Any) -> bool:
+    def validate(self, data: typing.Any) -> bool:
         if isinstance(data, (int, float)):
             return True
         elif isinstance(data, list):
@@ -42,7 +42,7 @@ class NumericProcessor(DataProcessor):
 
 
 class TextProcessor(DataProcessor):
-    def validate(self, data: Any) -> bool:
+    def validate(self, data: typing.Any) -> bool:
         if isinstance(data, str):
             return True
         elif isinstance(data, list):
@@ -70,7 +70,7 @@ class LogProcessor(DataProcessor):
             isinstance(v, str) for k, v in data.items()
         )
 
-    def validate(self, data: Any) -> bool:
+    def validate(self, data: typing.Any) -> bool:
         if isinstance(data, dict):
             return self.is_valid_dict(data)
         elif isinstance(data, list):
