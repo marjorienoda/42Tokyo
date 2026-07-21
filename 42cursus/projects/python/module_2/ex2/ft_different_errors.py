@@ -24,3 +24,7 @@ def test_error_types() -> None:
             error_name = e.__class__.__name__
             print(f"Caught {error_name}: {e}")
     print("All error types tested successfully!")
+
+
+if __name__ == "__main__":
+    test_error_types()
