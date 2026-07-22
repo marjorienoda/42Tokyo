@@ -1,33 +1,38 @@
 import math
 
 
+def parse_coordinate(value: str) -> float | None:
+    try:
+        return float(value)
+    except ValueError:
+        print(
+            f"Error on parameter '{value}': "
+            f"could not convert string to float: '{value}'"
+        )
+        return None
+
+
 def get_player_pos() -> tuple[float, float, float]:
     while True:
         try:
             user_input = input(
                 "Enter new coordinates as floats in format 'x,y,z': "
             )
-            x, y, z = [p.strip() for p in user_input.split(",")]
+            x_str, y_str, z_str = [p.strip() for p in user_input.split(",")]
         except ValueError:
             print("Invalid syntax")
             continue
 
-        coordinates_list = []
-        for i in (x, y, z):
-            try:
-                coordinates_list.append(float(i))
-            except ValueError:
-                print(
-                    f"Error on parameter '{i}': "
-                    f"could not convert string to float: '{i}'"
-                )
-                break
-        else:
-            return (
-                coordinates_list[0],
-                coordinates_list[1],
-                coordinates_list[2]
-            )
+        x = parse_coordinate(x_str)
+        if x is None:
+            continue
+        y = parse_coordinate(y_str)
+        if y is None:
+            continue
+        z = parse_coordinate(z_str)
+        if z is None:
+            continue
+        return (x, y, z)
 
 
 def distance(pos1: tuple[float, float, float],
