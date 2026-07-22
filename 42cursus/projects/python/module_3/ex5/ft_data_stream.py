@@ -28,7 +28,8 @@ def consume_event(
 ) -> typing.Generator[tuple[str, str], None, None]:
     while list_event:
         index = random.randrange(len(list_event))
-        event = list_event.pop(index)
+        event = list_event[index]
+        del list_event[index]
         yield event
 
 
