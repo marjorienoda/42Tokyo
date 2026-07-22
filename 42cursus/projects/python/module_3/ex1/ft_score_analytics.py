@@ -1,14 +1,6 @@
 import sys
 
 
-def parse_score(arg: str) -> int | None:
-    try:
-        return int(arg)
-    except ValueError:
-        print(f"Invalid parameter: '{arg}'")
-        return None
-
-
 def main() -> None:
     print("=== Player Score Analytics ===")
 
@@ -19,9 +11,14 @@ def main() -> None:
         )
         return
 
+    scores_processed_list: list[int] = []
     arguments = sys.argv[1:]
-    parsed = [parse_score(arg) for arg in arguments]
-    scores_processed_list = [score for score in parsed if score is not None]
+    for arg in arguments:
+        try:
+            score = int(arg)
+            scores_processed_list.append(score)
+        except ValueError:
+            print(f"Invalid parameter: '{arg}'")
     if len(scores_processed_list) == 0:
         print(
             "No scores provided. "
